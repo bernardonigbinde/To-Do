@@ -9,7 +9,20 @@ import SwiftUI
 
 struct ToDoListView: View {
     var body: some View {
-        Text("Welcome to To Do!")
+		NavigationView {
+			VStack {
+				
+			}
+			.navigationTitle(.title)
+			.toolbar {
+				Button {
+					
+				} label: {
+					Image(systemName: "plus")
+				}
+
+			}
+		}
     }
 }
 
@@ -17,4 +30,9 @@ struct ToDoListView_Previews: PreviewProvider {
     static var previews: some View {
         ToDoListView()
     }
+}
+
+
+fileprivate extension LocalizedStringKey {
+	static var title = LocalizedStringKey("todolist.header.title")
 }

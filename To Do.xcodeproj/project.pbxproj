@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A10590BF2AB7A3AF0031D366 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10590BE2AB7A3AF0031D366 /* DashboardView.swift */; };
+		A10590C12AB7A6F70031D366 /* ProfileViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10590C02AB7A6F70031D366 /* ProfileViewViewModel.swift */; };
 		A106420A2AB7570500045FBD /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10642092AB7570500045FBD /* HeaderView.swift */; };
 		A106420C2AB7591200045FBD /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A106420B2AB7591200045FBD /* BaseView.swift */; };
 		A106420E2AB75DC500045FBD /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A106420D2AB75DC500045FBD /* ForgotPasswordView.swift */; };
@@ -36,7 +38,6 @@
 		A146BF102AB73B7C00A51C57 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146BF0F2AB73B7C00A51C57 /* User.swift */; };
 		A146BF122AB73BA600A51C57 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146BF112AB73BA600A51C57 /* ToDo.swift */; };
 		A146BF142AB73BBE00A51C57 /* MainViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146BF132AB73BBE00A51C57 /* MainViewViewModel.swift */; };
-		A146BF162AB73BC800A51C57 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146BF152AB73BC800A51C57 /* ProfileViewModel.swift */; };
 		A146BF182AB73BD800A51C57 /* SignInViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146BF172AB73BD800A51C57 /* SignInViewViewModel.swift */; };
 		A146BF1A2AB73BE600A51C57 /* SignUpViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146BF192AB73BE600A51C57 /* SignUpViewViewModel.swift */; };
 		A146BF1C2AB73BF800A51C57 /* NewItemViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146BF1B2AB73BF800A51C57 /* NewItemViewViewModel.swift */; };
@@ -44,11 +45,13 @@
 		A146BF202AB73C1A00A51C57 /* ToDoListItemViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146BF1F2AB73C1A00A51C57 /* ToDoListItemViewViewModel.swift */; };
 		A1E5641F2AB7439100848C40 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A1E564212AB7439100848C40 /* Localizable.strings */; };
 		A1E564232AB744B900848C40 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E564222AB744B900848C40 /* SettingsView.swift */; };
-		A1E564252AB744C300848C40 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E564242AB744C300848C40 /* SettingsViewModel.swift */; };
+		A1E564252AB744C300848C40 /* SettingsViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E564242AB744C300848C40 /* SettingsViewViewModel.swift */; };
 		A1E564272AB7473800848C40 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E564262AB7473800848C40 /* BaseViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A10590BE2AB7A3AF0031D366 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		A10590C02AB7A6F70031D366 /* ProfileViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewViewModel.swift; sourceTree = "<group>"; };
 		A10642092AB7570500045FBD /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		A106420B2AB7591200045FBD /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		A106420D2AB75DC500045FBD /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
@@ -74,7 +77,6 @@
 		A146BF0F2AB73B7C00A51C57 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A146BF112AB73BA600A51C57 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 		A146BF132AB73BBE00A51C57 /* MainViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewModel.swift; sourceTree = "<group>"; };
-		A146BF152AB73BC800A51C57 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		A146BF172AB73BD800A51C57 /* SignInViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewViewModel.swift; sourceTree = "<group>"; };
 		A146BF192AB73BE600A51C57 /* SignUpViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewViewModel.swift; sourceTree = "<group>"; };
 		A146BF1B2AB73BF800A51C57 /* NewItemViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewViewModel.swift; sourceTree = "<group>"; };
@@ -82,7 +84,7 @@
 		A146BF1F2AB73C1A00A51C57 /* ToDoListItemViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListItemViewViewModel.swift; sourceTree = "<group>"; };
 		A1E564202AB7439100848C40 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A1E564222AB744B900848C40 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		A1E564242AB744C300848C40 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		A1E564242AB744C300848C40 /* SettingsViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewViewModel.swift; sourceTree = "<group>"; };
 		A1E564262AB7473800848C40 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -175,6 +177,7 @@
 				A1E564222AB744B900848C40 /* SettingsView.swift */,
 				A106420B2AB7591200045FBD /* BaseView.swift */,
 				A106420D2AB75DC500045FBD /* ForgotPasswordView.swift */,
+				A10590BE2AB7A3AF0031D366 /* DashboardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -182,14 +185,14 @@
 		A146BF002AB73A6400A51C57 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				A10590C02AB7A6F70031D366 /* ProfileViewViewModel.swift */,
 				A146BF132AB73BBE00A51C57 /* MainViewViewModel.swift */,
-				A146BF152AB73BC800A51C57 /* ProfileViewModel.swift */,
 				A146BF172AB73BD800A51C57 /* SignInViewViewModel.swift */,
 				A146BF192AB73BE600A51C57 /* SignUpViewViewModel.swift */,
 				A146BF1B2AB73BF800A51C57 /* NewItemViewViewModel.swift */,
 				A146BF1D2AB73C0200A51C57 /* ToDoListViewViewModel.swift */,
 				A146BF1F2AB73C1A00A51C57 /* ToDoListItemViewViewModel.swift */,
-				A1E564242AB744C300848C40 /* SettingsViewModel.swift */,
+				A1E564242AB744C300848C40 /* SettingsViewViewModel.swift */,
 				A1E564262AB7473800848C40 /* BaseViewModel.swift */,
 				A106420F2AB75DCF00045FBD /* ForgotPasswordViewViewModel.swift */,
 			);
@@ -303,13 +306,13 @@
 				A146BF142AB73BBE00A51C57 /* MainViewViewModel.swift in Sources */,
 				A1E564232AB744B900848C40 /* SettingsView.swift in Sources */,
 				A146BEE72AB7353900A51C57 /* MainView.swift in Sources */,
-				A1E564252AB744C300848C40 /* SettingsViewModel.swift in Sources */,
+				A1E564252AB744C300848C40 /* SettingsViewViewModel.swift in Sources */,
 				A146BF042AB73AF900A51C57 /* ProfileView.swift in Sources */,
 				A146BF0C2AB73B4400A51C57 /* SignUpView.swift in Sources */,
 				A106420C2AB7591200045FBD /* BaseView.swift in Sources */,
 				A146BF1A2AB73BE600A51C57 /* SignUpViewViewModel.swift in Sources */,
-				A146BF162AB73BC800A51C57 /* ProfileViewModel.swift in Sources */,
 				A10642172AB7706700045FBD /* ErrorMessageView.swift in Sources */,
+				A10590C12AB7A6F70031D366 /* ProfileViewViewModel.swift in Sources */,
 				A10642122AB769BB00045FBD /* PrimaryButton.swift in Sources */,
 				A146BF062AB73B0800A51C57 /* ToDoListView.swift in Sources */,
 				A10642152AB76FCF00045FBD /* String.swift in Sources */,
@@ -327,6 +330,7 @@
 				A146BF1E2AB73C0200A51C57 /* ToDoListViewViewModel.swift in Sources */,
 				A146BF202AB73C1A00A51C57 /* ToDoListItemViewViewModel.swift in Sources */,
 				A106421B2AB78B5B00045FBD /* EmailOrMobileNumberField.swift in Sources */,
+				A10590BF2AB7A3AF0031D366 /* DashboardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

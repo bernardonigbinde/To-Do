@@ -12,7 +12,7 @@ struct MainView: View {
 	
     var body: some View {
 		if viewModel.isSignedIn {
-			ToDoListView()
+			DashboardView()
 		} else {
 			SignInView()
 		}

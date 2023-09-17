@@ -15,6 +15,10 @@
 "emailormobilenumberfield.email.label" = "Email address";
 "emailormobilenumberfield.mobilenumber.label" = "Mobile number";
 
+//Mark: DashboardView strings
+"dashboard.tabview.home.label" = "Home";
+"dashboard.tabview.profile.label" = "Profile";
+"dashboard.tabview.settings.label" = "Settings";
 
 //Mark: SignInView strings
 "signin.form.password.label" = "Password";
@@ -31,16 +35,16 @@
 "signup.form.button" = "Sign Up";
 
 //Mark: ProfileView strings
-"profile.header.title" = "";
+"profile.header.title" = "Profile";
 
 //Mark: ToDoListView strings
-"todolist.header.title" = "";
+"todolist.header.title" = "To Do List";
 
 //Mark: NewItemView strings
-"newitem.header.title" = "";
+"newitem.header.title" = "New Item";
 
 //Mark: ToDoListItemView strings
 "todolistitem.header.title" = "";
 
 //Mark: SettingsView strings
-"settings.header.title" = "";
+"settings.header.title" = "Settings";
