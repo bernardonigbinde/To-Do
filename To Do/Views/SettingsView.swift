@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SettingsView: View {
+	@StateObject private var viewModel = SettingsViewViewModel()
+
     var body: some View {
 		NavigationView {
 			VStack {

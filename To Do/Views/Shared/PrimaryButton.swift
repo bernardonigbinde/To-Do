@@ -9,6 +9,8 @@ import SwiftUI
 
 struct PrimaryButton: View {
 	let title: LocalizedStringKey
+	var backgroundColor: Color = .blue
+	var foregroundColor: Color = .white
 	let action: () -> Void
 	
     var body: some View {
@@ -17,10 +19,10 @@ struct PrimaryButton: View {
 		} label: {
 			ZStack {
 				RoundedRectangle(cornerRadius: 6)
-					.foregroundColor(Color.blue)
+					.foregroundColor(backgroundColor)
 				
 				Text(title)
-					.foregroundColor(Color.white)
+					.foregroundColor(foregroundColor)
 					.bold()
 			}
 			.frame(height: 40)
@@ -30,7 +32,7 @@ struct PrimaryButton: View {
 
 struct PrimaryButton_Previews: PreviewProvider {
     static var previews: some View {
-		PrimaryButton(title: "Do Something") {
+		PrimaryButton(title: "Do Something", backgroundColor: .gray, foregroundColor: .black) {
 			
 		}
     }

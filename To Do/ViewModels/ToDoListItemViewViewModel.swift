@@ -8,5 +8,6 @@
 import Foundation
 
 class ToDoListItemViewViewModel: BaseViewModel {
-	
+	@Published var userID = ""
+	@Published var isShowingNewItemView = true
 }

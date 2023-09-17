@@ -8,5 +8,6 @@
 import Foundation
 
 class NewItemViewViewModel: BaseViewModel {
-	
+	@Published var title: String = ""
+	@Published var dueTime: Date = Date()
 }

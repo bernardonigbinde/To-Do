@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct ToDoListView: View {
+	@StateObject private var viewModel = ToDoListItemViewViewModel()
+	
+	init(userID: String) {
+		viewModel.userID = userID
+	}
+
     var body: some View {
 		NavigationView {
 			VStack {
@@ -23,12 +29,15 @@ struct ToDoListView: View {
 
 			}
 		}
+		.sheet(isPresented: $viewModel.isShowingNewItemView) {
+			NewItemView()
+		}
     }
 }
 
 struct ToDoListView_Previews: PreviewProvider {
     static var previews: some View {
-        ToDoListView()
+        ToDoListView(userID: "")
     }
 }
 

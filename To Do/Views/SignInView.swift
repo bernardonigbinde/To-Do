@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SignInView: BaseView {
-	@StateObject fileprivate var viewModel = SignInViewViewModel()
+	@StateObject private var viewModel = SignInViewViewModel()
 	
 	var body: some View {
 		NavigationView {

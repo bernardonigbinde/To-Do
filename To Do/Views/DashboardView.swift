@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct DashboardView: View {
+	@StateObject private var viewModel = DashboardViewViewModel()
+	private let userID: String
+	
+	init(userID: String) {
+		self.userID = userID
+	}
+
     var body: some View {
 		TabView {
-			ToDoListView()
+			ToDoListView(userID: userID)
 				.tabItem {
 					Label(.homeTabLabel, systemImage: "house")
 				}
@@ -28,7 +35,7 @@ struct DashboardView: View {
 
 struct DashboardView_Previews: PreviewProvider {
     static var previews: some View {
-        DashboardView()
+        DashboardView(userID: "")
     }
 }
 

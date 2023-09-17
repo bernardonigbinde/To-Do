@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct MainView: View {
-	@StateObject var viewModel = MainViewViewModel()
-	
+	@StateObject private var viewModel = MainViewViewModel()
+
     var body: some View {
 		if viewModel.isSignedIn {
-			DashboardView()
+			DashboardView(userID: viewModel.currentUserId)
 		} else {
 			SignInView()
 		}
