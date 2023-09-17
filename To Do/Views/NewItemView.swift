@@ -9,13 +9,14 @@ import SwiftUI
 
 struct NewItemView: View {
 	@StateObject private var viewModel = NewItemViewViewModel()
+	@Binding var isPresented: Bool
 
     var body: some View {
 		VStack {
 			Text(.title)
 				.bold()
 				.font(.largeTitle)
-				.padding(.top)
+				.padding(.top, 50)
 			
 			Form {
 				TextField(.itemTitle, text: $viewModel.title)
@@ -25,17 +26,25 @@ struct NewItemView: View {
 					.datePickerStyle(GraphicalDatePickerStyle())
 				
 				PrimaryButton(title: .saveButton, backgroundColor: .pink) {
-					
+					if viewModel.save() {
+						isPresented = false
+					}
 				}
 				.padding(.vertical)
 			}
+		}
+		.alert(isPresented: $viewModel.showAlert) {
+			Alert(
+				title: Text("Message"),
+				message: Text(viewModel.errorMessage)
+			)
 		}
     }
 }
 
 struct NewItemView_Previews: PreviewProvider {
     static var previews: some View {
-        NewItemView()
+		NewItemView(isPresented: .constant(true))
     }
 }
 

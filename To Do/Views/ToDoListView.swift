@@ -9,9 +9,10 @@ import SwiftUI
 
 struct ToDoListView: View {
 	@StateObject private var viewModel = ToDoListItemViewViewModel()
+	private var userID: String
 	
 	init(userID: String) {
-		viewModel.userID = userID
+		self.userID = userID
 	}
 
     var body: some View {
@@ -22,7 +23,7 @@ struct ToDoListView: View {
 			.navigationTitle(.title)
 			.toolbar {
 				Button {
-					
+					viewModel.isShowingNewItemView = true
 				} label: {
 					Image(systemName: "plus")
 				}
@@ -30,7 +31,7 @@ struct ToDoListView: View {
 			}
 		}
 		.sheet(isPresented: $viewModel.isShowingNewItemView) {
-			NewItemView()
+			NewItemView(isPresented: $viewModel.isShowingNewItemView)
 		}
     }
 }
