@@ -1,5 +1,5 @@
 //
-//  To_DoApp.swift
+//  AppDelegate.swift
 //  To Do
 //
 //  Created by Bernard Onigbinde on 2023/09/17.
@@ -9,7 +9,7 @@ import SwiftUI
 import FirebaseCore
 
 @main
-struct To_DoApp: App {
+struct AppDelegate: App {
 	init() {
 		FirebaseApp.configure()
 	}
