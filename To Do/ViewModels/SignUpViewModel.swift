@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+class SignInViewModel: BaseViewModel {
+	@Published var email = ""
+	@Published var password = ""
+}

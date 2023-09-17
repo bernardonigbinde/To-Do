@@ -7,62 +7,87 @@
 
 import SwiftUI
 
-struct SignInView: View {
-    var body: some View {
-		VStack {
-//			Header: Name & Icon
-			HeaderView()
-			
-			Spacer()
-			
-//			Form
-			
-//			Forgot Password
-			
-//			Sign In Button
-			
-//			Sign Up Button
-			
-//			Social Buttons
+struct SignInView: BaseView {
+	@StateObject var viewModel = SignInViewModel()
+	
+	var body: some View {
+		NavigationView {
+			VStack {
+				HeaderView(
+					title: .appName,
+					subtitle: .appSlogan,
+					height: 430,
+					angle: 9,
+					iconName: "list.bullet.clipboard.fill",
+					backgroundColor: .pink
+				)
+				
+				LoginFormView(viewModel: viewModel)
+				
+				Spacer()
+				
+				//			Social Buttons
+				
+				Spacer()
+				
+				//			Sign Up Button
+				VStack {
+					Text(.signUpLabel)
+					NavigationLink(.signUpButton, destination: SignUpView())
+				}
+			}
 		}
-    }
+	}
 }
 
 struct SignInView_Previews: PreviewProvider {
-    static var previews: some View {
-        SignInView()
-    }
+	static var previews: some View {
+		SignInView()
+	}
 }
 
-fileprivate struct HeaderView: View {
+fileprivate struct LoginFormView: View {
+	@ObservedObject var viewModel: SignInViewModel
+	
 	var body: some View {
-		ZStack {
-			RoundedRectangle(cornerRadius: CGFloat(0))
-				.foregroundColor(Color.pink)
-				.rotationEffect(Angle(degrees: 185))
-			
-			VStack {
-				Image(systemName: "list.bullet.clipboard.fill")
-					.renderingMode(.template)
-					.resizable()
-					.foregroundColor(Color.white)
-					.scaledToFit()
-					.frame(width: 75)
-					.padding(.bottom, 10)
+		VStack {
+			TextField(.emailLabel, text: $viewModel.email)
+				.textFieldStyle(RoundedBorderTextFieldStyle())
+			SecureField(.passwordLabel, text: $viewModel.password)
+				.textFieldStyle(RoundedBorderTextFieldStyle())
+			Button {
 				
-				Text("To Do")
-					.foregroundColor(Color.white)
-					.bold()
-					.font(.system(size: 40))
-				
-				Text("Get things done")
-					.foregroundColor(Color.white)
-					.fontWeight(Font.Weight.medium)
+			} label: {
+				ZStack {
+					RoundedRectangle(cornerRadius: 6)
+						.foregroundColor(Color.blue)
+					
+					Text(.signInButton)
+						.foregroundColor(Color.white)
+						.bold()
+				}
 			}
-			.offset(y: 50)
-			.padding(.bottom, 50)
+			.frame(height: 40)
+			.padding(.top, 10)
+			.padding(.bottom, 10)
+			
+			NavigationLink(.forgotPasswordButton, destination: ForgotPasswordView())
+				.font(.system(.subheadline))
 		}
-		.frame(width: UIScreen.main.bounds.width * 3, height: 400)
-		.offset(y: -100)
+		.padding(20)
+		.background(Color.gray.opacity(0.1))
+		.cornerRadius(10)
+		.offset(y: -170)
+		.zIndex(-1)
+		.padding(30)
 	}
+}
+
+fileprivate extension LocalizedStringKey {
+	static var emailLabel = LocalizedStringKey("signin.form.email.label")
+	static var passwordLabel = LocalizedStringKey("signin.form.password.label")
+	static var signInButton = LocalizedStringKey("signin.form.signin.button");
+	static var signUpLabel = LocalizedStringKey("signin.signup.label");
+	static var signUpButton = LocalizedStringKey("signin.signup.button");
+	static var forgotPasswordButton = LocalizedStringKey("signin.forgotpassword.button");
 }

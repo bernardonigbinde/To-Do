@@ -1,0 +1,42 @@
+/* 
+  Localizable.strings
+  To Do
+
+  Created by Bernard Onigbinde on 2023/09/17.
+  
+*/
+
+
+//Mark: App strings
+"app.name" = "To Do";
+"app.slogan" = "Get things done!";
+
+//Mark: SignInView strings
+"signin.form.email.label" = "Email address";
+"signin.form.password.label" = "Password";
+"signin.form.signin.button" = "Sign In";
+"signin.signup.label" = "Don't have an account?";
+"signin.signup.button" = "Create Account";
+"signin.forgotpassword.button" = "Forgot Password?";
+
+//Mark: SignUpView strings
+"signup.header.title" = "Sign Up";
+"signup.header.subtitle" = "Become a doer!";
+"signup.form.email.label" = "Email address";
+"signup.form.password.label" = "Password";
+"signup.form.button" = "Sign Up";
+
+//Mark: ProfileView strings
+"profile.header.title" = "";
+
+//Mark: ToDoListView strings
+"todolist.header.title" = "";
+
+//Mark: NewItemView strings
+"newitem.header.title" = "";
+
+//Mark: ToDoListItemView strings
+"todolistitem.header.title" = "";
+
+//Mark: SettingsView strings
+"settings.header.title" = "";
