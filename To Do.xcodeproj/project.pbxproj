@@ -11,6 +11,7 @@
 		A10590C12AB7A6F70031D366 /* ProfileViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10590C02AB7A6F70031D366 /* ProfileViewViewModel.swift */; };
 		A10590C32AB7A90E0031D366 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10590C22AB7A90E0031D366 /* Encodable.swift */; };
 		A10590C52AB7AA730031D366 /* DashboardViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10590C42AB7AA730031D366 /* DashboardViewViewModel.swift */; };
+		A10590C72AB7BA940031D366 /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10590C62AB7BA940031D366 /* TodoList.swift */; };
 		A106420A2AB7570500045FBD /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10642092AB7570500045FBD /* HeaderView.swift */; };
 		A106420C2AB7591200045FBD /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A106420B2AB7591200045FBD /* BaseView.swift */; };
 		A106420E2AB75DC500045FBD /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A106420D2AB75DC500045FBD /* ForgotPasswordView.swift */; };
@@ -37,7 +38,7 @@
 		A146BF0C2AB73B4400A51C57 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146BF0B2AB73B4400A51C57 /* SignUpView.swift */; };
 		A146BF0E2AB73B7100A51C57 /* ToDoListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146BF0D2AB73B7100A51C57 /* ToDoListItemView.swift */; };
 		A146BF102AB73B7C00A51C57 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146BF0F2AB73B7C00A51C57 /* User.swift */; };
-		A146BF122AB73BA600A51C57 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146BF112AB73BA600A51C57 /* ToDo.swift */; };
+		A146BF122AB73BA600A51C57 /* TodoListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146BF112AB73BA600A51C57 /* TodoListItem.swift */; };
 		A146BF142AB73BBE00A51C57 /* MainViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146BF132AB73BBE00A51C57 /* MainViewViewModel.swift */; };
 		A146BF182AB73BD800A51C57 /* SignInViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146BF172AB73BD800A51C57 /* SignInViewViewModel.swift */; };
 		A146BF1A2AB73BE600A51C57 /* SignUpViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146BF192AB73BE600A51C57 /* SignUpViewViewModel.swift */; };
@@ -55,6 +56,7 @@
 		A10590C02AB7A6F70031D366 /* ProfileViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewViewModel.swift; sourceTree = "<group>"; };
 		A10590C22AB7A90E0031D366 /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
 		A10590C42AB7AA730031D366 /* DashboardViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewViewModel.swift; sourceTree = "<group>"; };
+		A10590C62AB7BA940031D366 /* TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
 		A10642092AB7570500045FBD /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		A106420B2AB7591200045FBD /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		A106420D2AB75DC500045FBD /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
@@ -77,7 +79,7 @@
 		A146BF0B2AB73B4400A51C57 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		A146BF0D2AB73B7100A51C57 /* ToDoListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListItemView.swift; sourceTree = "<group>"; };
 		A146BF0F2AB73B7C00A51C57 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		A146BF112AB73BA600A51C57 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
+		A146BF112AB73BA600A51C57 /* TodoListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListItem.swift; sourceTree = "<group>"; };
 		A146BF132AB73BBE00A51C57 /* MainViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewModel.swift; sourceTree = "<group>"; };
 		A146BF172AB73BD800A51C57 /* SignInViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewViewModel.swift; sourceTree = "<group>"; };
 		A146BF192AB73BE600A51C57 /* SignUpViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewViewModel.swift; sourceTree = "<group>"; };
@@ -206,7 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				A146BF0F2AB73B7C00A51C57 /* User.swift */,
-				A146BF112AB73BA600A51C57 /* ToDo.swift */,
+				A146BF112AB73BA600A51C57 /* TodoListItem.swift */,
+				A10590C62AB7BA940031D366 /* TodoList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -305,7 +308,7 @@
 			files = (
 				A146BF0A2AB73B3700A51C57 /* NewItemView.swift in Sources */,
 				A1E564272AB7473800848C40 /* BaseViewModel.swift in Sources */,
-				A146BF122AB73BA600A51C57 /* ToDo.swift in Sources */,
+				A146BF122AB73BA600A51C57 /* TodoListItem.swift in Sources */,
 				A146BF142AB73BBE00A51C57 /* MainViewViewModel.swift in Sources */,
 				A10590C32AB7A90E0031D366 /* Encodable.swift in Sources */,
 				A1E564232AB744B900848C40 /* SettingsView.swift in Sources */,
@@ -315,6 +318,7 @@
 				A146BF042AB73AF900A51C57 /* ProfileView.swift in Sources */,
 				A146BF0C2AB73B4400A51C57 /* SignUpView.swift in Sources */,
 				A106420C2AB7591200045FBD /* BaseView.swift in Sources */,
+				A10590C72AB7BA940031D366 /* TodoList.swift in Sources */,
 				A146BF1A2AB73BE600A51C57 /* SignUpViewViewModel.swift in Sources */,
 				A10642172AB7706700045FBD /* ErrorMessageView.swift in Sources */,
 				A10590C12AB7A6F70031D366 /* ProfileViewViewModel.swift in Sources */,

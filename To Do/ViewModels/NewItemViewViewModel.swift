@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import FirebaseAuth
+import FirebaseFirestore
 
 class NewItemViewViewModel: BaseViewModel {
 	@Published var title: String = ""
-	@Published var dueTime: Date = Date()
+	@Published var dueAt: Date = Date()
 	@Published var errorMessage = ""
 	@Published var showAlert = false
 	
@@ -20,7 +22,7 @@ class NewItemViewViewModel: BaseViewModel {
 			return false
 		}
 		
-		guard dueTime >= Date() else {
+		guard Date().timeIntervalSince1970.isLess(than: dueAt.timeIntervalSince1970) else {
 			errorMessage = "You can not set a date or time in the past."
 			showAlert = true
 			return false
@@ -32,10 +34,22 @@ class NewItemViewViewModel: BaseViewModel {
 	}
 	
 	func save() -> Bool {
-		if canSave {
-			return true
-		} else {
+		guard canSave else { return false }
+		
+		guard let userID = Auth.auth().currentUser?.uid else {
+			errorMessage = "Could not load your account correctly."
+			showAlert = true
 			return false
 		}
+		
+		let todoListItemID = UUID().uuidString
+		let todoListItem = TodoListItem(id: todoListItemID, ownerID: userID, title: title, dueAt: dueAt.timeIntervalSince1970)
+		
+		let db = Firestore.firestore()
+		db.collection("todos")
+			.document(todoListItemID)
+			.setData(todoListItem.toJson())
+		
+		return true
 	}
 }

@@ -22,7 +22,7 @@ struct NewItemView: View {
 				TextField(.itemTitle, text: $viewModel.title)
 					.textFieldStyle(DefaultTextFieldStyle())
 				
-				DatePicker(.dueTime, selection: $viewModel.dueTime)
+				DatePicker(.dueAt, selection: $viewModel.dueAt)
 					.datePickerStyle(GraphicalDatePickerStyle())
 				
 				PrimaryButton(title: .saveButton, backgroundColor: .pink) {
@@ -51,6 +51,6 @@ struct NewItemView_Previews: PreviewProvider {
 fileprivate extension LocalizedStringKey {
 	static var title = LocalizedStringKey("newitem.header.title")
 	static var itemTitle = LocalizedStringKey("newitem.form.title")
-	static var dueTime = LocalizedStringKey("newitem.form.duetime")
+	static var dueAt = LocalizedStringKey("newitem.form.dueAt")
 	static var saveButton = LocalizedStringKey("newitem.form.save.button")
 }

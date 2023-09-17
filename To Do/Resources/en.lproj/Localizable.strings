@@ -43,7 +43,7 @@
 //Mark: NewItemView strings
 "newitem.header.title" = "New Item";
  "newitem.form.title" = "Title";
- "newitem.form.duetime" = "Due Time";
+ "newitem.form.dueAt" = "Due Time";
  "newitem.form.save.button" = "Save";
 
 //Mark: ToDoListItemView strings
