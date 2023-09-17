@@ -9,26 +9,45 @@ import Foundation
 import FirebaseAuth
 
 class SignInViewViewModel: BaseViewModel {
-	@Published var email = ""
+	@Published var username = ""
 	@Published var password = ""
 	@Published var errorMessage = ""
-	
-	private func isValidSubmission() -> Bool {
-		if email.trimmingCharacters(in: .whitespaces).isEmpty || !email.isValidEmailAddress() {
-			errorMessage = "Enter a valid email address"
-		} else if password.trimmingCharacters(in: .whitespaces).isEmpty {
-			errorMessage = "Enter a valid password"
-		} else {
-			errorMessage = ""
-			return true
-		}
-		return false
-	}
+	@Published var isMobile = false
 	
 	func signIn() {
 		guard isValidSubmission() else {
-			Auth.auth().signIn(withEmail: email, password: password)
 			return
 		}
+		
+		if isMobile {
+			
+		} else {
+			Auth.auth().signIn(withEmail: username, password: password)
+		}
+	}
+	
+	private func isValidSubmission() -> Bool {
+		guard !isMobile else {
+			errorMessage = "Mobile number login is not yet available"
+			return false
+		}
+		
+		guard !isMobile && username.isValidEmailAddress() else {
+			errorMessage = "Enter a valid email address"
+			return false
+		}
+		
+//		TODO: Uncomment this when mobile number sign in is introduced
+//		guard isMobile && username.isValidMobileNumber() else {
+//			errorMessage = "Enter a valid mobile number"
+//			return false
+//		}
+		
+		guard password.isValidPassword() else {
+			errorMessage = "Enter a valid password"
+			return false
+		}
+		
+		return true
 	}
 }

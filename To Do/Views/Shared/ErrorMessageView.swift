@@ -14,6 +14,8 @@ struct ErrorMessageView: View {
     var body: some View {
 		HStack {
 			Text(errorMessage)
+				.lineLimit(2)
+				.multilineTextAlignment(.leading)
 				.frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
 				.foregroundColor(.red)
 				.padding(.vertical)
@@ -28,11 +30,11 @@ struct ErrorMessageView: View {
 
 		}
 		.padding(.horizontal)
-    }
+	}
 }
 
 struct ErrorMessageView_Previews: PreviewProvider {
     static var previews: some View {
-		ErrorMessageView(errorMessage: "Error occured")
+		ErrorMessageView(errorMessage: "Error occured. It has a long long long message body, and this is how we handle that long body of text")
     }
 }

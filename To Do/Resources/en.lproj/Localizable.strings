@@ -11,8 +11,12 @@
 "app.name" = "To Do";
 "app.slogan" = "Get things done!";
 
+//Mark: Email or Mobile number field strings
+"emailormobilenumberfield.email.label" = "Email address";
+"emailormobilenumberfield.mobilenumber.label" = "Mobile number";
+
+
 //Mark: SignInView strings
-"signin.form.email.label" = "Email address";
 "signin.form.password.label" = "Password";
 "signin.form.signin.button" = "Sign In";
 "signin.signup.label" = "Don't have an account?";
@@ -23,7 +27,6 @@
 "signup.header.title" = "Sign Up";
 "signup.header.subtitle" = "Become a doer!";
 "signup.form.name.label" = "Name";
-"signup.form.email.label" = "Email address";
 "signup.form.password.label" = "Password";
 "signup.form.button" = "Sign Up";
 

@@ -23,7 +23,7 @@ struct PrimaryButton: View {
 					.foregroundColor(Color.white)
 					.bold()
 			}
-			.frame(maxHeight: 44)
+			.frame(height: 40)
 		}
     }
 }

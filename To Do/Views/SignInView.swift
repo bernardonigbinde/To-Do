@@ -26,7 +26,13 @@ struct SignInView: BaseView {
 				
 				Spacer()
 				
-				//			Social Buttons
+				HStack(spacing: 10) {
+					Image(systemName: "")
+					Image(systemName: "")
+					Image(systemName: "")
+					Image(systemName: "")
+				}
+				
 				
 				Spacer()
 				
@@ -47,7 +53,8 @@ struct SignInView_Previews: PreviewProvider {
 }
 
 fileprivate struct SignInFormView: View {
-	@ObservedObject var viewModel: SignInViewViewModel
+	@StateObject var viewModel: SignInViewViewModel
+	@State private var textFieldId: String = UUID().uuidString
 	
 	var body: some View {
 		VStack {
@@ -57,17 +64,11 @@ fileprivate struct SignInFormView: View {
 				}
 			}
 			
-			TextField(.emailLabel, text: $viewModel.email)
-				.keyboardType(.emailAddress)
-				.textContentType(.emailAddress)
-				.textFieldStyle(RoundedBorderTextFieldStyle())
-				.autocapitalization(.none)
-				.autocorrectionDisabled()
-			SecureField(.passwordLabel, text: $viewModel.password)
-				.textContentType(.password)
-				.textFieldStyle(RoundedBorderTextFieldStyle())
-				.autocapitalization(.none)
-				.autocorrectionDisabled()
+			EmailOrMobileNumberField(
+				isMobile: $viewModel.isMobile,
+				username: $viewModel.username
+			)
+			PasswordField(label: .passwordLabel, password: $viewModel.password)
 			PrimaryButton(title: .signInButton) {
 				viewModel.signIn()
 			}
@@ -89,7 +90,6 @@ fileprivate struct SignInFormView: View {
 }
 
 fileprivate extension LocalizedStringKey {
-	static var emailLabel = LocalizedStringKey("signin.form.email.label")
 	static var passwordLabel = LocalizedStringKey("signin.form.password.label")
 	static var signInButton = LocalizedStringKey("signin.form.signin.button");
 	static var signUpLabel = LocalizedStringKey("signin.signup.label");

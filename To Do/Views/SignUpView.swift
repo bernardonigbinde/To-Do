@@ -10,7 +10,7 @@ import SwiftUI
 struct SignUpView: BaseView {
 	@StateObject fileprivate var viewModel = SignUpViewViewModel()
 	
-    var body: some View {
+	var body: some View {
 		VStack {
 			HeaderView(
 				title: .title,
@@ -18,24 +18,24 @@ struct SignUpView: BaseView {
 				height: 480,
 				angle: -9,
 				iconName: "person.crop.circle.badge.plus",
-				backgroundColor: .yellow
+				backgroundColor: .orange
 			)
 			
 			SignUpFormView(viewModel: viewModel)
 			
 			Spacer()
 		}
-    }
+	}
 }
 
 struct SignUpView_Previews: PreviewProvider {
-    static var previews: some View {
-        SignUpView()
-    }
+	static var previews: some View {
+		SignUpView()
+	}
 }
 
 fileprivate struct SignUpFormView: View {
-	@ObservedObject var viewModel: SignUpViewViewModel
+	@StateObject var viewModel: SignUpViewViewModel
 	
 	var body: some View {
 		VStack {
@@ -45,18 +45,13 @@ fileprivate struct SignUpFormView: View {
 				}
 			}
 			TextField(.nameLabel, text: $viewModel.name)
+				.textContentType(.name)
 				.textFieldStyle(RoundedBorderTextFieldStyle())
-			TextField(.emailLabel, text: $viewModel.email)
-				.keyboardType(.emailAddress)
-				.textContentType(.emailAddress)
-				.textFieldStyle(RoundedBorderTextFieldStyle())
-				.autocapitalization(.none)
-				.autocorrectionDisabled()
-			SecureField(.passwordLabel, text: $viewModel.password)
-				.textContentType(.password)
-				.textFieldStyle(RoundedBorderTextFieldStyle())
-				.autocapitalization(.none)
-				.autocorrectionDisabled()
+			EmailOrMobileNumberField(
+				isMobile: $viewModel.isMobile,
+				username: $viewModel.username
+			)
+			PasswordField(label: .passwordLabel, password: $viewModel.password)
 			PrimaryButton(title: .signUpButton) {
 				viewModel.signUp()
 			}
@@ -71,11 +66,16 @@ fileprivate struct SignUpFormView: View {
 	}
 }
 
+
+
+
+
 fileprivate extension LocalizedStringKey {
 	static var title = LocalizedStringKey("signup.header.title");
 	static var subtitle = LocalizedStringKey("signup.header.subtitle");
 	static var nameLabel = LocalizedStringKey("signup.form.name.label")
 	static var emailLabel = LocalizedStringKey("signup.form.email.label")
+	static var mobileNumberLabel = LocalizedStringKey("signup.form.mobilenumber.label")
 	static var passwordLabel = LocalizedStringKey("signup.form.password.label")
 	static var signUpButton = LocalizedStringKey("signup.form.button");
 }
