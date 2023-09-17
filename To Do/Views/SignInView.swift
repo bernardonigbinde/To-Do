@@ -71,8 +71,11 @@ fileprivate struct LoginFormView: View {
 			.padding(.top, 10)
 			.padding(.bottom, 10)
 			
-			NavigationLink(.forgotPasswordButton, destination: ForgotPasswordView())
-				.font(.system(.subheadline))
+			HStack {
+				Spacer()
+				NavigationLink(.forgotPasswordButton, destination: ForgotPasswordView())
+					.font(.system(.subheadline))
+			}
 		}
 		.padding(20)
 		.background(Color.gray.opacity(0.1))
