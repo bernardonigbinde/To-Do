@@ -11,6 +11,9 @@
 		A106420C2AB7591200045FBD /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A106420B2AB7591200045FBD /* BaseView.swift */; };
 		A106420E2AB75DC500045FBD /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A106420D2AB75DC500045FBD /* ForgotPasswordView.swift */; };
 		A10642102AB75DCF00045FBD /* ForgotPasswordViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A106420F2AB75DCF00045FBD /* ForgotPasswordViewViewModel.swift */; };
+		A10642122AB769BB00045FBD /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10642112AB769BB00045FBD /* PrimaryButton.swift */; };
+		A10642152AB76FCF00045FBD /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10642142AB76FCF00045FBD /* String.swift */; };
+		A10642172AB7706700045FBD /* ErrorMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10642162AB7706700045FBD /* ErrorMessageView.swift */; };
 		A146BEE52AB7353900A51C57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146BEE42AB7353900A51C57 /* AppDelegate.swift */; };
 		A146BEE72AB7353900A51C57 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146BEE62AB7353900A51C57 /* MainView.swift */; };
 		A146BEE92AB7353A00A51C57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A146BEE82AB7353A00A51C57 /* Assets.xcassets */; };
@@ -31,8 +34,8 @@
 		A146BF122AB73BA600A51C57 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146BF112AB73BA600A51C57 /* ToDo.swift */; };
 		A146BF142AB73BBE00A51C57 /* MainViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146BF132AB73BBE00A51C57 /* MainViewViewModel.swift */; };
 		A146BF162AB73BC800A51C57 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146BF152AB73BC800A51C57 /* ProfileViewModel.swift */; };
-		A146BF182AB73BD800A51C57 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146BF172AB73BD800A51C57 /* SignInViewModel.swift */; };
-		A146BF1A2AB73BE600A51C57 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146BF192AB73BE600A51C57 /* SignUpViewModel.swift */; };
+		A146BF182AB73BD800A51C57 /* SignInViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146BF172AB73BD800A51C57 /* SignInViewViewModel.swift */; };
+		A146BF1A2AB73BE600A51C57 /* SignUpViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146BF192AB73BE600A51C57 /* SignUpViewViewModel.swift */; };
 		A146BF1C2AB73BF800A51C57 /* NewItemViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146BF1B2AB73BF800A51C57 /* NewItemViewViewModel.swift */; };
 		A146BF1E2AB73C0200A51C57 /* ToDoListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146BF1D2AB73C0200A51C57 /* ToDoListViewViewModel.swift */; };
 		A146BF202AB73C1A00A51C57 /* ToDoListItemViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146BF1F2AB73C1A00A51C57 /* ToDoListItemViewViewModel.swift */; };
@@ -47,6 +50,9 @@
 		A106420B2AB7591200045FBD /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		A106420D2AB75DC500045FBD /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		A106420F2AB75DCF00045FBD /* ForgotPasswordViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewViewModel.swift; sourceTree = "<group>"; };
+		A10642112AB769BB00045FBD /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		A10642142AB76FCF00045FBD /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		A10642162AB7706700045FBD /* ErrorMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessageView.swift; sourceTree = "<group>"; };
 		A146BEE12AB7353900A51C57 /* To Do.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "To Do.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A146BEE42AB7353900A51C57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A146BEE62AB7353900A51C57 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -63,8 +69,8 @@
 		A146BF112AB73BA600A51C57 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 		A146BF132AB73BBE00A51C57 /* MainViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewModel.swift; sourceTree = "<group>"; };
 		A146BF152AB73BC800A51C57 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
-		A146BF172AB73BD800A51C57 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
-		A146BF192AB73BE600A51C57 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		A146BF172AB73BD800A51C57 /* SignInViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewViewModel.swift; sourceTree = "<group>"; };
+		A146BF192AB73BE600A51C57 /* SignUpViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewViewModel.swift; sourceTree = "<group>"; };
 		A146BF1B2AB73BF800A51C57 /* NewItemViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewViewModel.swift; sourceTree = "<group>"; };
 		A146BF1D2AB73C0200A51C57 /* ToDoListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewViewModel.swift; sourceTree = "<group>"; };
 		A146BF1F2AB73C1A00A51C57 /* ToDoListItemViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListItemViewViewModel.swift; sourceTree = "<group>"; };
@@ -94,8 +100,18 @@
 			isa = PBXGroup;
 			children = (
 				A10642092AB7570500045FBD /* HeaderView.swift */,
+				A10642112AB769BB00045FBD /* PrimaryButton.swift */,
+				A10642162AB7706700045FBD /* ErrorMessageView.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		A10642132AB76FC200045FBD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A10642142AB76FCF00045FBD /* String.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		A146BED82AB7353900A51C57 = {
@@ -117,6 +133,7 @@
 		A146BEE32AB7353900A51C57 /* To Do */ = {
 			isa = PBXGroup;
 			children = (
+				A10642132AB76FC200045FBD /* Extensions */,
 				A146BF022AB73A8300A51C57 /* Resources */,
 				A146BF012AB73A6C00A51C57 /* Models */,
 				A146BF002AB73A6400A51C57 /* ViewModels */,
@@ -158,8 +175,8 @@
 			children = (
 				A146BF132AB73BBE00A51C57 /* MainViewViewModel.swift */,
 				A146BF152AB73BC800A51C57 /* ProfileViewModel.swift */,
-				A146BF172AB73BD800A51C57 /* SignInViewModel.swift */,
-				A146BF192AB73BE600A51C57 /* SignUpViewModel.swift */,
+				A146BF172AB73BD800A51C57 /* SignInViewViewModel.swift */,
+				A146BF192AB73BE600A51C57 /* SignUpViewViewModel.swift */,
 				A146BF1B2AB73BF800A51C57 /* NewItemViewViewModel.swift */,
 				A146BF1D2AB73C0200A51C57 /* ToDoListViewViewModel.swift */,
 				A146BF1F2AB73C1A00A51C57 /* ToDoListItemViewViewModel.swift */,
@@ -281,9 +298,12 @@
 				A146BF042AB73AF900A51C57 /* ProfileView.swift in Sources */,
 				A146BF0C2AB73B4400A51C57 /* SignUpView.swift in Sources */,
 				A106420C2AB7591200045FBD /* BaseView.swift in Sources */,
-				A146BF1A2AB73BE600A51C57 /* SignUpViewModel.swift in Sources */,
+				A146BF1A2AB73BE600A51C57 /* SignUpViewViewModel.swift in Sources */,
 				A146BF162AB73BC800A51C57 /* ProfileViewModel.swift in Sources */,
+				A10642172AB7706700045FBD /* ErrorMessageView.swift in Sources */,
+				A10642122AB769BB00045FBD /* PrimaryButton.swift in Sources */,
 				A146BF062AB73B0800A51C57 /* ToDoListView.swift in Sources */,
+				A10642152AB76FCF00045FBD /* String.swift in Sources */,
 				A106420E2AB75DC500045FBD /* ForgotPasswordView.swift in Sources */,
 				A146BF102AB73B7C00A51C57 /* User.swift in Sources */,
 				A106420A2AB7570500045FBD /* HeaderView.swift in Sources */,
@@ -291,7 +311,7 @@
 				A146BEE52AB7353900A51C57 /* AppDelegate.swift in Sources */,
 				A146BF1C2AB73BF800A51C57 /* NewItemViewViewModel.swift in Sources */,
 				A146BF082AB73B1300A51C57 /* SignInView.swift in Sources */,
-				A146BF182AB73BD800A51C57 /* SignInViewModel.swift in Sources */,
+				A146BF182AB73BD800A51C57 /* SignInViewViewModel.swift in Sources */,
 				A10642102AB75DCF00045FBD /* ForgotPasswordViewViewModel.swift in Sources */,
 				A146BF1E2AB73C0200A51C57 /* ToDoListViewViewModel.swift in Sources */,
 				A146BF202AB73C1A00A51C57 /* ToDoListItemViewViewModel.swift in Sources */,

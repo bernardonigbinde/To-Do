@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SignInView: BaseView {
-	@StateObject var viewModel = SignInViewModel()
+	@StateObject fileprivate var viewModel = SignInViewViewModel()
 	
 	var body: some View {
 		NavigationView {
@@ -22,7 +22,7 @@ struct SignInView: BaseView {
 					backgroundColor: .pink
 				)
 				
-				LoginFormView(viewModel: viewModel)
+				SignInFormView(viewModel: viewModel)
 				
 				Spacer()
 				
@@ -46,30 +46,32 @@ struct SignInView_Previews: PreviewProvider {
 	}
 }
 
-fileprivate struct LoginFormView: View {
-	@ObservedObject var viewModel: SignInViewModel
+fileprivate struct SignInFormView: View {
+	@ObservedObject var viewModel: SignInViewViewModel
 	
 	var body: some View {
 		VStack {
-			TextField(.emailLabel, text: $viewModel.email)
-				.textFieldStyle(RoundedBorderTextFieldStyle())
-			SecureField(.passwordLabel, text: $viewModel.password)
-				.textFieldStyle(RoundedBorderTextFieldStyle())
-			Button {
-				
-			} label: {
-				ZStack {
-					RoundedRectangle(cornerRadius: 6)
-						.foregroundColor(Color.blue)
-					
-					Text(.signInButton)
-						.foregroundColor(Color.white)
-						.bold()
+			if !viewModel.errorMessage.isEmpty {
+				ErrorMessageView(errorMessage: viewModel.errorMessage) {
+					viewModel.errorMessage = ""
 				}
 			}
-			.frame(height: 40)
-			.padding(.top, 10)
-			.padding(.bottom, 10)
+			
+			TextField(.emailLabel, text: $viewModel.email)
+				.keyboardType(.emailAddress)
+				.textContentType(.emailAddress)
+				.textFieldStyle(RoundedBorderTextFieldStyle())
+				.autocapitalization(.none)
+				.autocorrectionDisabled()
+			SecureField(.passwordLabel, text: $viewModel.password)
+				.textContentType(.password)
+				.textFieldStyle(RoundedBorderTextFieldStyle())
+				.autocapitalization(.none)
+				.autocorrectionDisabled()
+			PrimaryButton(title: .signInButton) {
+				viewModel.signIn()
+			}
+			.padding(.vertical, 10)
 			
 			HStack {
 				Spacer()
@@ -80,7 +82,7 @@ fileprivate struct LoginFormView: View {
 		.padding(20)
 		.background(Color.gray.opacity(0.1))
 		.cornerRadius(10)
-		.offset(y: -170)
+		.offset(y: -140)
 		.zIndex(-1)
 		.padding(30)
 	}
