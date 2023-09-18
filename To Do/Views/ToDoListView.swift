@@ -11,15 +11,20 @@ import FirebaseFirestoreSwift
 
 struct ToDoListView: View {
 	@StateObject private var viewModel = ToDoListViewViewModel()
-	private let userID: String
 	@FirestoreQuery var todoItems: [TodoListItem]
+	@FirestoreQuery var todoLists: [TodoList]
+	private let userID: String
 	
 	init(userID: String) {
 		self.userID = userID
 		self._todoItems = FirestoreQuery(
 			collectionPath: "todos", predicates: [
 				.where("ownerID", isEqualTo: userID),
-				.where("todoListID", isEqualTo: "")
+			]
+		)
+		self._todoLists = FirestoreQuery(
+			collectionPath: "todoLists", predicates: [
+				.where("ownerID", isEqualTo: userID),
 			]
 		)
 	}
@@ -36,12 +41,21 @@ struct ToDoListView: View {
 					Text("No item yet")
 						.foregroundColor(Color.gray)
 				} else{
-					List(todoItems.sorted(by: { todo1, todo2 in
-						todo2.createdAt.isLess(than: todo1.createdAt)
-					})) { todoItem in
-						Text(todoItem.title)
+					List {
+						Section(header: Text("Uncategorized")) {
+							ForEach(todoItems.filter({ $0.todoListID.isEmpty })) { todo in
+								Text(todo.title)
+							}
+						}
+						ForEach(todoLists) { list in
+							Section(header: Text(list.title)) {
+								ForEach(todoItems.filter({ $0.todoListID == list.id })) { todo in
+									Text(todo.title)
+								}
+							}
+						}
 					}
-					.listStyle(PlainListStyle())
+					.listStyle(.insetGrouped)
 				}
 			}
 			.navigationTitle(.title)
