@@ -12,13 +12,36 @@ struct ToDoListItemView: View {
 	@Binding var todo: TodoListItem
 	
 	var body: some View {
-		VStack(alignment: .leading) {
-			Text(todo.title)
-				.font(.title)
-				.padding(.bottom, -10)
-			Toggle("Completed", isOn: $todo.completed)
-				.font(.subheadline)
+		HStack(alignment: .center) {
+			VStack(alignment: .leading) {
+				Text(todo.title)
+					.font(.body)
+				Text(todo.dueAt.toFormattedDateTime())
+					.font(.subheadline)
+					.foregroundColor(Color.gray)
+			}
+			
+			Spacer()
+			
+			Button {
+				todo.completed.toggle()
+			} label: {
+				Image(systemName: todo.completed ? "checkmark.circle.fill" : "circle")
+			}
 		}
+		.padding(.vertical, 10)
+		.swipeActions(
+			trailing: [
+				SwipeActionButton(
+					text: Text("Delete"),
+					action: {
+						
+					},
+					tint: .red
+				)
+			],
+			allowsFullSwipeTrailing: true
+		)
 	}
 }
 
@@ -29,7 +52,9 @@ struct ToDoListItemView_Previews: PreviewProvider {
 				id: "",
 				ownerID: "",
 				title: "Buy milk",
-				dueAt: Date().timeIntervalSince1970)
+				completed: true,
+				dueAt: Date().timeIntervalSince1970
+			)
 		))
 	}
 }

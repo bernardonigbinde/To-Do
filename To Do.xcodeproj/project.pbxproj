@@ -50,6 +50,10 @@
 		A146BF1C2AB73BF800A51C57 /* NewItemViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146BF1B2AB73BF800A51C57 /* NewItemViewViewModel.swift */; };
 		A146BF1E2AB73C0200A51C57 /* ToDoListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146BF1D2AB73C0200A51C57 /* ToDoListViewViewModel.swift */; };
 		A146BF202AB73C1A00A51C57 /* ToDoListItemViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146BF1F2AB73C1A00A51C57 /* ToDoListItemViewViewModel.swift */; };
+		A15982A72AB8F528007ABA6B /* SwipeActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15982A62AB8F528007ABA6B /* SwipeActionView.swift */; };
+		A15982A92AB8F55F007ABA6B /* SwipeActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15982A82AB8F55F007ABA6B /* SwipeActionButton.swift */; };
+		A15982AB2AB8F5BF007ABA6B /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15982AA2AB8F5BF007ABA6B /* View.swift */; };
+		A15982AD2AB8F879007ABA6B /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15982AC2AB8F879007ABA6B /* TimeInterval.swift */; };
 		A1E5641F2AB7439100848C40 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A1E564212AB7439100848C40 /* Localizable.strings */; };
 		A1E564232AB744B900848C40 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E564222AB744B900848C40 /* SettingsView.swift */; };
 		A1E564252AB744C300848C40 /* SettingsViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E564242AB744C300848C40 /* SettingsViewViewModel.swift */; };
@@ -96,6 +100,10 @@
 		A146BF1B2AB73BF800A51C57 /* NewItemViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewViewModel.swift; sourceTree = "<group>"; };
 		A146BF1D2AB73C0200A51C57 /* ToDoListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewViewModel.swift; sourceTree = "<group>"; };
 		A146BF1F2AB73C1A00A51C57 /* ToDoListItemViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListItemViewViewModel.swift; sourceTree = "<group>"; };
+		A15982A62AB8F528007ABA6B /* SwipeActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeActionView.swift; sourceTree = "<group>"; };
+		A15982A82AB8F55F007ABA6B /* SwipeActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeActionButton.swift; sourceTree = "<group>"; };
+		A15982AA2AB8F5BF007ABA6B /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		A15982AC2AB8F879007ABA6B /* TimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
 		A1E564202AB7439100848C40 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A1E564222AB744B900848C40 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A1E564242AB744C300848C40 /* SettingsViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewViewModel.swift; sourceTree = "<group>"; };
@@ -136,6 +144,8 @@
 				A10642142AB76FCF00045FBD /* String.swift */,
 				A10590C22AB7A90E0031D366 /* Encodable.swift */,
 				A10590CA2AB86B9A0031D366 /* QuerySnapshot.swift */,
+				A15982AA2AB8F5BF007ABA6B /* View.swift */,
+				A15982AC2AB8F879007ABA6B /* TimeInterval.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -159,6 +169,7 @@
 		A146BEE32AB7353900A51C57 /* To Do */ = {
 			isa = PBXGroup;
 			children = (
+				A15982A52AB8F50B007ABA6B /* Utils */,
 				A10642132AB76FC200045FBD /* Extensions */,
 				A146BF022AB73A8300A51C57 /* Resources */,
 				A146BF012AB73A6C00A51C57 /* Models */,
@@ -237,6 +248,15 @@
 				A1E564212AB7439100848C40 /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		A15982A52AB8F50B007ABA6B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A15982A62AB8F528007ABA6B /* SwipeActionView.swift */,
+				A15982A82AB8F55F007ABA6B /* SwipeActionButton.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,6 +348,7 @@
 				A146BF122AB73BA600A51C57 /* TodoListItem.swift in Sources */,
 				A146BF142AB73BBE00A51C57 /* MainViewViewModel.swift in Sources */,
 				A10590C32AB7A90E0031D366 /* Encodable.swift in Sources */,
+				A15982AD2AB8F879007ABA6B /* TimeInterval.swift in Sources */,
 				A1E564232AB744B900848C40 /* SettingsView.swift in Sources */,
 				A10590C52AB7AA730031D366 /* DashboardViewViewModel.swift in Sources */,
 				A146BEE72AB7353900A51C57 /* MainView.swift in Sources */,
@@ -340,7 +361,9 @@
 				A146BF1A2AB73BE600A51C57 /* SignUpViewViewModel.swift in Sources */,
 				A10642172AB7706700045FBD /* ErrorMessageView.swift in Sources */,
 				A10590C12AB7A6F70031D366 /* ProfileViewViewModel.swift in Sources */,
+				A15982AB2AB8F5BF007ABA6B /* View.swift in Sources */,
 				A10642122AB769BB00045FBD /* PrimaryButton.swift in Sources */,
+				A15982A72AB8F528007ABA6B /* SwipeActionView.swift in Sources */,
 				A10590D12AB8A1D90031D366 /* NewListView.swift in Sources */,
 				A146BF062AB73B0800A51C57 /* ToDoListView.swift in Sources */,
 				A10642152AB76FCF00045FBD /* String.swift in Sources */,
@@ -356,6 +379,7 @@
 				A10642102AB75DCF00045FBD /* ForgotPasswordViewViewModel.swift in Sources */,
 				A10642192AB78B0700045FBD /* PasswordField.swift in Sources */,
 				A146BF1E2AB73C0200A51C57 /* ToDoListViewViewModel.swift in Sources */,
+				A15982A92AB8F55F007ABA6B /* SwipeActionButton.swift in Sources */,
 				A146BF202AB73C1A00A51C57 /* ToDoListItemViewViewModel.swift in Sources */,
 				A106421B2AB78B5B00045FBD /* EmailOrMobileNumberField.swift in Sources */,
 				A10590BF2AB7A3AF0031D366 /* DashboardView.swift in Sources */,

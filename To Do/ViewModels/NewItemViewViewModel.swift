@@ -55,7 +55,8 @@ class NewItemViewViewModel: BaseViewModel {
 		return true
 	}
 	
-	func getLists(for userID: String) {
+	func getLists() {
+		guard let userID = firebaseUser?.uid else { return }
 		let db = Firestore.firestore()
 		db.collection("todoLists")
 			.whereField("ownerID", isEqualTo: userID)

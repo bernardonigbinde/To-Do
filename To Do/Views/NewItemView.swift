@@ -10,7 +10,6 @@ import FirebaseFirestoreSwift
 
 struct NewItemView: View {
 	@StateObject private var viewModel = NewItemViewViewModel()
-	let userID: String
 	@Binding var isPresented: Bool
 	
     var body: some View {
@@ -54,14 +53,14 @@ struct NewItemView: View {
 			)
 		}
 		.onAppear {
-			viewModel.getLists(for: userID)
+			viewModel.getLists()
 		}
     }
 }
 
 struct NewItemView_Previews: PreviewProvider {
     static var previews: some View {
-		NewItemView(userID: "XPFdF3DLiNQO64Um3MVQGuftbdG3", isPresented: .constant(true))
+		NewItemView(isPresented: .constant(true))
     }
 }
 

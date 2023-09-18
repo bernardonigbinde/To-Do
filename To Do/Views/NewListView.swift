@@ -11,7 +11,6 @@ import FirebaseFirestore
 struct NewListView: View {
 	@StateObject private var viewModel = NewListViewViewModel()
 	@Binding var isPresented: Bool
-	let userID: String
 	
     var body: some View {
 		VStack {
@@ -46,7 +45,7 @@ struct NewListView: View {
 
 struct NewListView_Previews: PreviewProvider {
     static var previews: some View {
-		NewListView(isPresented: .constant(true), userID: "XPFdF3DLiNQO64Um3MVQGuftbdG3")
+		NewListView(isPresented: .constant(true))
     }
 }
 

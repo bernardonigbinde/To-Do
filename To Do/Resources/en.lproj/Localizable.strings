@@ -49,6 +49,8 @@
 
 //Mark: ToDoListView strings
 "todolist.header.title" = "To Do List";
+"todolist.list.header.uncategorized.title" = "Uncategorized";
+"todolist.list.empty.label" = "No items yet.";
 
 //Mark: NewItemView strings
 "newitem.header.title" = "New Item";

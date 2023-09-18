@@ -10,22 +10,11 @@ import FirebaseFirestoreSwift
 
 struct ListsView: View {
 	@StateObject private var viewModel = ListsViewViewModel()
-	@FirestoreQuery var todoLists: [TodoList]
-	private let userID: String
-	
-	init(userID: String) {
-		self.userID = userID
-		self._todoLists = FirestoreQuery(
-			collectionPath: "todoLists", predicates: [
-				.where("ownerID", isEqualTo: userID),
-			]
-		)
-	}
 	
     var body: some View {
 		NavigationView {
 			VStack {
-				if todoLists.isEmpty {
+				if viewModel.todoLists.isEmpty {
 					Image(systemName: "tray.fill")
 						.resizable()
 						.scaledToFit()
@@ -35,7 +24,7 @@ struct ListsView: View {
 						.foregroundColor(Color.gray)
 				} else{
 					List {
-						ForEach(todoLists) { list in
+						ForEach(viewModel.todoLists) { list in
 							Text(list.title)
 						}
 					}
@@ -50,15 +39,18 @@ struct ListsView: View {
 				}
 			}
 			.sheet(isPresented: $viewModel.isShowingNewListView) {
-				NewListView(isPresented: $viewModel.isShowingNewListView, userID: userID)
+				NewListView(isPresented: $viewModel.isShowingNewListView)
 			}
+		}
+		.onAppear {
+			viewModel.loadLists()
 		}
     }
 }
 
 struct ListsView_Previews: PreviewProvider {
     static var previews: some View {
-		ListsView(userID: "XPFdF3DLiNQO64Um3MVQGuftbdG3")
+		ListsView()
     }
 }
 
