@@ -10,7 +10,7 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 struct ToDoListView: View {
-	@StateObject private var viewModel = ToDoListItemViewViewModel()
+	@StateObject private var viewModel = ToDoListViewViewModel()
 	private let userID: String
 	@FirestoreQuery var todoItems: [TodoListItem]
 	
