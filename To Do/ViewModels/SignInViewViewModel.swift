@@ -22,7 +22,13 @@ class SignInViewViewModel: BaseViewModel {
 		if isMobile {
 			
 		} else {
-			Auth.auth().signIn(withEmail: username, password: password)
+			Auth.auth().signIn(withEmail: username, password: password) { [weak self] result, error in
+				guard let error = error else {
+					return
+				}
+				
+				self?.errorMessage = error.localizedDescription
+			}
 		}
 	}
 	
