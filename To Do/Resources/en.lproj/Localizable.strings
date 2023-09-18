@@ -45,6 +45,7 @@
 
 //Mark: ProfileView strings
 "profile.header.title" = "Profile";
+"profile.header.signout.button" = "Sign Out";
 
 //Mark: ToDoListView strings
 "todolist.header.title" = "To Do List";

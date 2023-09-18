@@ -16,6 +16,13 @@ struct ProfileView: View {
 				
 			}
 			.navigationTitle(.title)
+			.toolbar {
+				Button {
+					viewModel.signOut()
+				} label: {
+					Text(.signOutButton)
+				}
+			}
 		}
     }
 }
@@ -28,4 +35,5 @@ struct ProfileView_Previews: PreviewProvider {
 
 fileprivate extension LocalizedStringKey {
 	static var title = LocalizedStringKey("profile.header.title")
+	static var signOutButton = LocalizedStringKey("profile.header.signout.button")
 }

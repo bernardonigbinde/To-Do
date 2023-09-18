@@ -44,13 +44,13 @@ struct ToDoListView: View {
 					List {
 						Section(header: Text("Uncategorized")) {
 							ForEach(todoItems.filter({ $0.todoListID.isEmpty })) { todo in
-								Text(todo.title)
+								ToDoListItemView(todo: .constant(todo))
 							}
 						}
 						ForEach(todoLists) { list in
 							Section(header: Text(list.title)) {
 								ForEach(todoItems.filter({ $0.todoListID == list.id })) { todo in
-									Text(todo.title)
+									ToDoListItemView(todo: .constant(todo))
 								}
 							}
 						}
@@ -70,9 +70,6 @@ struct ToDoListView: View {
 		}
 		.sheet(isPresented: $viewModel.isShowingNewItemView) {
 			NewItemView(userID: userID, isPresented: $viewModel.isShowingNewItemView)
-		}
-		.onAppear {
-			viewModel.getLists(userID: userID)
 		}
 	}
 }

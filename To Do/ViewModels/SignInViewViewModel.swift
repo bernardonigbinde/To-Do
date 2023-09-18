@@ -15,6 +15,8 @@ class SignInViewViewModel: BaseViewModel {
 	@Published var isMobile = false
 	
 	func signIn() {
+		errorMessage = ""
+		
 		guard isValidSubmission() else {
 			return
 		}

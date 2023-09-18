@@ -9,14 +9,27 @@ import SwiftUI
 
 struct ToDoListItemView: View {
 	@StateObject private var viewModel = ToDoListItemViewViewModel()
-
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+	@Binding var todo: TodoListItem
+	
+	var body: some View {
+		VStack(alignment: .leading) {
+			Text(todo.title)
+				.font(.title)
+				.padding(.bottom, -10)
+			Toggle("Completed", isOn: $todo.completed)
+				.font(.subheadline)
+		}
+	}
 }
 
 struct ToDoListItemView_Previews: PreviewProvider {
-    static var previews: some View {
-		ToDoListItemView()
-    }
+	static var previews: some View {
+		ToDoListItemView(todo: .constant(
+			TodoListItem(
+				id: "",
+				ownerID: "",
+				title: "Buy milk",
+				dueAt: Date().timeIntervalSince1970)
+		))
+	}
 }
