@@ -26,7 +26,13 @@ struct ListsView: View {
 		NavigationView {
 			VStack {
 				if todoLists.isEmpty {
+					Image(systemName: "tray.fill")
+						.resizable()
+						.scaledToFit()
+						.frame(width: 150)
+						.foregroundColor(Color.gray)
 					Text("No lists yet")
+						.foregroundColor(Color.gray)
 				} else{
 					List {
 						ForEach(todoLists) { list in
