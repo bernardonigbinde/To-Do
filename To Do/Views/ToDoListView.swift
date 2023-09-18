@@ -27,12 +27,22 @@ struct ToDoListView: View {
     var body: some View {
 		NavigationView {
 			VStack {
-				List(todoItems.sorted(by: { todo1, todo2 in
-					todo2.createdAt.isLess(than: todo1.createdAt)
-				})) { todoItem in
-					Text(todoItem.title)
+				if todoItems.isEmpty {
+					Image(systemName: "tray.fill")
+						.resizable()
+						.scaledToFit()
+						.frame(width: 150)
+						.foregroundColor(Color.gray)
+					Text("No item yet")
+						.foregroundColor(Color.gray)
+				} else{
+					List(todoItems.sorted(by: { todo1, todo2 in
+						todo2.createdAt.isLess(than: todo1.createdAt)
+					})) { todoItem in
+						Text(todoItem.title)
+					}
+					.listStyle(PlainListStyle())
 				}
-				.listStyle(PlainListStyle())
 			}
 			.navigationTitle(.title)
 			.toolbar {
