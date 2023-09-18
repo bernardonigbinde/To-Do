@@ -38,6 +38,11 @@
 //Mark: ListsView strings
 "lists.header.title" = "Lists";
 
+//Mark: NewListView strings
+"newlist.header.title" = "New List";
+"newlist.form.title.label" = "Title";
+"newlist.form.save.button" = "Save";
+
 //Mark: ProfileView strings
 "profile.header.title" = "Profile";
 

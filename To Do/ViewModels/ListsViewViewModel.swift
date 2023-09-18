@@ -8,5 +8,6 @@
 import Foundation
 
 class ListsViewViewModel: BaseViewModel {
+	@Published var isShowingNewListView = false
 	
 }

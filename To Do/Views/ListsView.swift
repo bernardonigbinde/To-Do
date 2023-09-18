@@ -10,8 +10,8 @@ import FirebaseFirestoreSwift
 
 struct ListsView: View {
 	@StateObject private var viewModel = ListsViewViewModel()
-	private let userID: String
 	@FirestoreQuery var todoLists: [TodoList]
+	private let userID: String
 	
 	init(userID: String) {
 		self.userID = userID
@@ -44,11 +44,13 @@ struct ListsView: View {
 			.navigationTitle(.title)
 			.toolbar {
 				Button {
-					
+					viewModel.isShowingNewListView = true
 				} label: {
 					Image(systemName: "plus")
 				}
-
+			}
+			.sheet(isPresented: $viewModel.isShowingNewListView) {
+				NewListView(isPresented: $viewModel.isShowingNewListView, userID: userID)
 			}
 		}
     }

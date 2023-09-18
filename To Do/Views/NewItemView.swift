@@ -24,7 +24,7 @@ struct NewItemView: View {
 				TextField(.itemTitle, text: $viewModel.title)
 					.textFieldStyle(DefaultTextFieldStyle())
 				
-				Picker(selection: $viewModel.listId, label: Text("List")) {
+				Picker(selection: $viewModel.todoListID, label: Text("List")) {
 					ForEach(viewModel.lists, id: \.id) { list in
 						Text(list.title).tag(list.id)
 					}
@@ -46,8 +46,11 @@ struct NewItemView: View {
 		}
 		.alert(isPresented: $viewModel.showAlert) {
 			Alert(
-				title: Text("Message"),
-				message: Text(viewModel.errorMessage)
+				title: Text("Error"),
+				message: Text(viewModel.errorMessage),
+				dismissButton: .default(Text("OK"), action: {
+					viewModel.showAlert = false
+				})
 			)
 		}
 		.onAppear {

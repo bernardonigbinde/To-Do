@@ -15,6 +15,8 @@
 		A10590CB2AB86B9A0031D366 /* QuerySnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10590CA2AB86B9A0031D366 /* QuerySnapshot.swift */; };
 		A10590CD2AB88BE50031D366 /* ListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10590CC2AB88BE50031D366 /* ListsView.swift */; };
 		A10590CF2AB88C9D0031D366 /* ListsViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10590CE2AB88C9D0031D366 /* ListsViewViewModel.swift */; };
+		A10590D12AB8A1D90031D366 /* NewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10590D02AB8A1D90031D366 /* NewListView.swift */; };
+		A10590D32AB8A1E40031D366 /* NewListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10590D22AB8A1E40031D366 /* NewListViewViewModel.swift */; };
 		A106420A2AB7570500045FBD /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10642092AB7570500045FBD /* HeaderView.swift */; };
 		A106420C2AB7591200045FBD /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A106420B2AB7591200045FBD /* BaseView.swift */; };
 		A106420E2AB75DC500045FBD /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A106420D2AB75DC500045FBD /* ForgotPasswordView.swift */; };
@@ -63,6 +65,8 @@
 		A10590CA2AB86B9A0031D366 /* QuerySnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuerySnapshot.swift; sourceTree = "<group>"; };
 		A10590CC2AB88BE50031D366 /* ListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsView.swift; sourceTree = "<group>"; };
 		A10590CE2AB88C9D0031D366 /* ListsViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsViewViewModel.swift; sourceTree = "<group>"; };
+		A10590D02AB8A1D90031D366 /* NewListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewListView.swift; sourceTree = "<group>"; };
+		A10590D22AB8A1E40031D366 /* NewListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewListViewViewModel.swift; sourceTree = "<group>"; };
 		A10642092AB7570500045FBD /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		A106420B2AB7591200045FBD /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		A106420D2AB75DC500045FBD /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
@@ -190,6 +194,7 @@
 				A106420D2AB75DC500045FBD /* ForgotPasswordView.swift */,
 				A10590BE2AB7A3AF0031D366 /* DashboardView.swift */,
 				A10590CC2AB88BE50031D366 /* ListsView.swift */,
+				A10590D02AB8A1D90031D366 /* NewListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -209,6 +214,7 @@
 				A106420F2AB75DCF00045FBD /* ForgotPasswordViewViewModel.swift */,
 				A10590C42AB7AA730031D366 /* DashboardViewViewModel.swift */,
 				A10590CE2AB88C9D0031D366 /* ListsViewViewModel.swift */,
+				A10590D22AB8A1E40031D366 /* NewListViewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -335,9 +341,11 @@
 				A10642172AB7706700045FBD /* ErrorMessageView.swift in Sources */,
 				A10590C12AB7A6F70031D366 /* ProfileViewViewModel.swift in Sources */,
 				A10642122AB769BB00045FBD /* PrimaryButton.swift in Sources */,
+				A10590D12AB8A1D90031D366 /* NewListView.swift in Sources */,
 				A146BF062AB73B0800A51C57 /* ToDoListView.swift in Sources */,
 				A10642152AB76FCF00045FBD /* String.swift in Sources */,
 				A106420E2AB75DC500045FBD /* ForgotPasswordView.swift in Sources */,
+				A10590D32AB8A1E40031D366 /* NewListViewViewModel.swift in Sources */,
 				A146BF102AB73B7C00A51C57 /* User.swift in Sources */,
 				A106420A2AB7570500045FBD /* HeaderView.swift in Sources */,
 				A146BF0E2AB73B7100A51C57 /* ToDoListItemView.swift in Sources */,

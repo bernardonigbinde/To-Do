@@ -11,7 +11,7 @@ import FirebaseFirestore
 
 class NewItemViewViewModel: BaseViewModel {
 	@Published var title: String = ""
-	@Published var listId = ""
+	@Published var todoListID = ""
 	@Published var dueAt: Date = Date()
 	@Published var errorMessage = ""
 	@Published var showAlert = false
@@ -45,7 +45,7 @@ class NewItemViewViewModel: BaseViewModel {
 		}
 		
 		let todoListItemID = UUID().uuidString
-		let todoListItem = TodoListItem(id: todoListItemID, ownerID: userID, title: title, dueAt: dueAt.timeIntervalSince1970)
+		let todoListItem = TodoListItem(id: todoListItemID, ownerID: userID, title: title, todoListID: todoListID, dueAt: dueAt.timeIntervalSince1970)
 		
 		let db = Firestore.firestore()
 		db.collection("todos")
@@ -64,9 +64,11 @@ class NewItemViewViewModel: BaseViewModel {
 					let remoteLists: [TodoList] = snapshot?.toList() ?? []
 					self?.lists.append(TodoList(id: "", ownerID: userID, title: "No List"))
 					self?.lists.append(contentsOf: remoteLists)
-					self?.listId = self?.lists.first?.id ?? ""
+					self?.todoListID = self?.lists.first?.id ?? ""
 					return
 				}
+				self?.errorMessage = "Could not load lists. \(error.localizedDescription)"
+				self?.showAlert = true
 			}
 	}
 }

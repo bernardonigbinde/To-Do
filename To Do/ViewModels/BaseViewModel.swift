@@ -9,6 +9,8 @@ import Foundation
 import FirebaseAuth
 
 class BaseViewModel: ObservableObject {
+	var firebaseUser: FirebaseAuth.User? { Auth.auth().currentUser }
+	
 	func signOut() {
 		do {
 			try Auth.auth().signOut()
