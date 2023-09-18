@@ -21,6 +21,10 @@ struct DashboardView: View {
 				.tabItem {
 					Label(.homeTabLabel, systemImage: "house")
 				}
+			ListsView(userID: userID)
+				.tabItem {
+					Label(.listsTabLabel, systemImage: "list.triangle")
+				}
 			ProfileView()
 				.tabItem {
 					Label(.profileTabLabel, systemImage: "person.circle")
@@ -41,6 +45,7 @@ struct DashboardView_Previews: PreviewProvider {
 
 fileprivate extension LocalizedStringKey {
 	static var homeTabLabel = LocalizedStringKey("dashboard.tabview.home.label")
+	static var listsTabLabel = LocalizedStringKey("dashboard.tabview.lists.label")
 	static var profileTabLabel = LocalizedStringKey("dashboard.tabview.profile.label")
 	static var settingsTabLabel = LocalizedStringKey("dashboard.tabview.settings.label")
 }

@@ -12,6 +12,9 @@
 		A10590C32AB7A90E0031D366 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10590C22AB7A90E0031D366 /* Encodable.swift */; };
 		A10590C52AB7AA730031D366 /* DashboardViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10590C42AB7AA730031D366 /* DashboardViewViewModel.swift */; };
 		A10590C72AB7BA940031D366 /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10590C62AB7BA940031D366 /* TodoList.swift */; };
+		A10590CB2AB86B9A0031D366 /* QuerySnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10590CA2AB86B9A0031D366 /* QuerySnapshot.swift */; };
+		A10590CD2AB88BE50031D366 /* ListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10590CC2AB88BE50031D366 /* ListsView.swift */; };
+		A10590CF2AB88C9D0031D366 /* ListsViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10590CE2AB88C9D0031D366 /* ListsViewViewModel.swift */; };
 		A106420A2AB7570500045FBD /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10642092AB7570500045FBD /* HeaderView.swift */; };
 		A106420C2AB7591200045FBD /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A106420B2AB7591200045FBD /* BaseView.swift */; };
 		A106420E2AB75DC500045FBD /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A106420D2AB75DC500045FBD /* ForgotPasswordView.swift */; };
@@ -57,6 +60,9 @@
 		A10590C22AB7A90E0031D366 /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
 		A10590C42AB7AA730031D366 /* DashboardViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewViewModel.swift; sourceTree = "<group>"; };
 		A10590C62AB7BA940031D366 /* TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
+		A10590CA2AB86B9A0031D366 /* QuerySnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuerySnapshot.swift; sourceTree = "<group>"; };
+		A10590CC2AB88BE50031D366 /* ListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsView.swift; sourceTree = "<group>"; };
+		A10590CE2AB88C9D0031D366 /* ListsViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsViewViewModel.swift; sourceTree = "<group>"; };
 		A10642092AB7570500045FBD /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		A106420B2AB7591200045FBD /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		A106420D2AB75DC500045FBD /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
@@ -125,6 +131,7 @@
 			children = (
 				A10642142AB76FCF00045FBD /* String.swift */,
 				A10590C22AB7A90E0031D366 /* Encodable.swift */,
+				A10590CA2AB86B9A0031D366 /* QuerySnapshot.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -182,6 +189,7 @@
 				A106420B2AB7591200045FBD /* BaseView.swift */,
 				A106420D2AB75DC500045FBD /* ForgotPasswordView.swift */,
 				A10590BE2AB7A3AF0031D366 /* DashboardView.swift */,
+				A10590CC2AB88BE50031D366 /* ListsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,6 +208,7 @@
 				A1E564262AB7473800848C40 /* BaseViewModel.swift */,
 				A106420F2AB75DCF00045FBD /* ForgotPasswordViewViewModel.swift */,
 				A10590C42AB7AA730031D366 /* DashboardViewViewModel.swift */,
+				A10590CE2AB88C9D0031D366 /* ListsViewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -307,6 +316,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A146BF0A2AB73B3700A51C57 /* NewItemView.swift in Sources */,
+				A10590CF2AB88C9D0031D366 /* ListsViewViewModel.swift in Sources */,
+				A10590CD2AB88BE50031D366 /* ListsView.swift in Sources */,
 				A1E564272AB7473800848C40 /* BaseViewModel.swift in Sources */,
 				A146BF122AB73BA600A51C57 /* TodoListItem.swift in Sources */,
 				A146BF142AB73BBE00A51C57 /* MainViewViewModel.swift in Sources */,
@@ -314,6 +325,7 @@
 				A1E564232AB744B900848C40 /* SettingsView.swift in Sources */,
 				A10590C52AB7AA730031D366 /* DashboardViewViewModel.swift in Sources */,
 				A146BEE72AB7353900A51C57 /* MainView.swift in Sources */,
+				A10590CB2AB86B9A0031D366 /* QuerySnapshot.swift in Sources */,
 				A1E564252AB744C300848C40 /* SettingsViewViewModel.swift in Sources */,
 				A146BF042AB73AF900A51C57 /* ProfileView.swift in Sources */,
 				A146BF0C2AB73B4400A51C57 /* SignUpView.swift in Sources */,

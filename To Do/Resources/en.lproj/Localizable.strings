@@ -17,6 +17,7 @@
 
 //Mark: DashboardView strings
 "dashboard.tabview.home.label" = "Home";
+"dashboard.tabview.lists.label" = "Lists";
 "dashboard.tabview.profile.label" = "Profile";
 "dashboard.tabview.settings.label" = "Settings";
 
@@ -33,6 +34,9 @@
 "signup.form.name.label" = "Name";
 "signup.form.password.label" = "Password";
 "signup.form.button" = "Sign Up";
+
+//Mark: ListsView strings
+"lists.header.title" = "Lists";
 
 //Mark: ProfileView strings
 "profile.header.title" = "Profile";

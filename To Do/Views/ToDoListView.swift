@@ -45,7 +45,7 @@ struct ToDoListView: View {
 			}
 		}
 		.sheet(isPresented: $viewModel.isShowingNewItemView) {
-			NewItemView(isPresented: $viewModel.isShowingNewItemView)
+			NewItemView(userID: userID, isPresented: $viewModel.isShowingNewItemView)
 		}
 		.onAppear {
 			viewModel.getLists(userID: userID)

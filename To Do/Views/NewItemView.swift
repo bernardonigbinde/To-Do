@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import FirebaseFirestoreSwift
 
 struct NewItemView: View {
 	@StateObject private var viewModel = NewItemViewViewModel()
+	let userID: String
 	@Binding var isPresented: Bool
-
+	
     var body: some View {
 		VStack {
 			Text(.title)
@@ -21,6 +23,15 @@ struct NewItemView: View {
 			Form {
 				TextField(.itemTitle, text: $viewModel.title)
 					.textFieldStyle(DefaultTextFieldStyle())
+				
+				Picker(selection: $viewModel.listId, label: Text("List")) {
+					ForEach(viewModel.lists, id: \.id) { list in
+						Text(list.title).tag(list.id)
+					}
+				}
+				.pickerStyle(MenuPickerStyle())
+				
+
 				
 				DatePicker(.dueAt, selection: $viewModel.dueAt)
 					.datePickerStyle(GraphicalDatePickerStyle())
@@ -39,12 +50,15 @@ struct NewItemView: View {
 				message: Text(viewModel.errorMessage)
 			)
 		}
+		.onAppear {
+			viewModel.getLists(for: userID)
+		}
     }
 }
 
 struct NewItemView_Previews: PreviewProvider {
     static var previews: some View {
-		NewItemView(isPresented: .constant(true))
+		NewItemView(userID: "XPFdF3DLiNQO64Um3MVQGuftbdG3", isPresented: .constant(true))
     }
 }
 

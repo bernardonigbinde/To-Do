@@ -11,9 +11,11 @@ import FirebaseFirestore
 
 class NewItemViewViewModel: BaseViewModel {
 	@Published var title: String = ""
+	@Published var listId = ""
 	@Published var dueAt: Date = Date()
 	@Published var errorMessage = ""
 	@Published var showAlert = false
+	@Published var lists: [TodoList] = []
 	
 	var canSave: Bool {
 		guard !title.trimmingCharacters(in: .whitespaces).isEmpty else {
@@ -51,5 +53,20 @@ class NewItemViewViewModel: BaseViewModel {
 			.setData(todoListItem.toJson())
 		
 		return true
+	}
+	
+	func getLists(for userID: String) {
+		let db = Firestore.firestore()
+		db.collection("todoLists")
+			.whereField("ownerID", isEqualTo: userID)
+			.getDocuments { [weak self] snapshot, error in
+				guard let error = error else {
+					let remoteLists: [TodoList] = snapshot?.toList() ?? []
+					self?.lists.append(TodoList(id: "", ownerID: userID, title: "No List"))
+					self?.lists.append(contentsOf: remoteLists)
+					self?.listId = self?.lists.first?.id ?? ""
+					return
+				}
+			}
 	}
 }

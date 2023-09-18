@@ -19,19 +19,21 @@ class ToDoListItemViewViewModel: BaseViewModel {
 		db.collection("todoLists")
 			.whereField("ownerID", isEqualTo: userID)
 			.getDocuments(completion: { [weak self] snapshot, error in
-				snapshot?.documents.forEach({ snapshot in
-					guard let data = try? JSONSerialization.data(withJSONObject: snapshot.data()) else {
-						print("list deserialization failed 1")
-						return
-					}
-					do {
-						self?.lists.append(try JSONDecoder().decode(TodoList.self, from: data))
-					} catch {
-						print("list deserialization failed 2")
-					}
-					print(self?.lists ?? [])
-					self?.getItemsByLists(userID: userID)
-				})
+				self?.lists.append(contentsOf: snapshot?.toList() ?? [])
+				self?.getItemsByLists(userID: userID)
+//				snapshot?.documents.forEach({ snapshot in
+//					guard let data = try? JSONSerialization.data(withJSONObject: snapshot.data()) else {
+//						print("list deserialization failed 1")
+//						return
+//					}
+//					do {
+//						self?.lists.append(try JSONDecoder().decode(TodoList.self, from: data))
+//					} catch {
+//						print("list deserialization failed 2")
+//					}
+//					print(self?.lists ?? [])
+//					self?.getItemsByLists(userID: userID)
+//				})
 			})
 		
 	}
@@ -45,17 +47,18 @@ class ToDoListItemViewViewModel: BaseViewModel {
 				.whereField("ownerID", isEqualTo: userID)
 				.whereField("todoListID", isEqualTo: todoList.id)
 				.getDocuments(completion: { [weak self] snapshot, error in
-					snapshot?.documents.forEach({ snap in
-						guard let data = try? JSONSerialization.data(withJSONObject: snap.data()) else {
-							print("item deserialization failed 1")
-							return
-						}
-						do {
-							currentList.append(try JSONDecoder().decode(TodoListItem.self, from: data))
-						} catch {
-							print("item deserialization failed 2")
-						}
-					})
+					currentList.append(contentsOf: snapshot?.toList() ?? [])
+//					snapshot?.documents.forEach({ snap in
+//						guard let data = try? JSONSerialization.data(withJSONObject: snap.data()) else {
+//							print("item deserialization failed 1")
+//							return
+//						}
+//						do {
+//							currentList.append(try JSONDecoder().decode(TodoListItem.self, from: data))
+//						} catch {
+//							print("item deserialization failed 2")
+//						}
+//					})
 					
 					print("Count: \(currentList.count)")
 					
