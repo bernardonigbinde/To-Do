@@ -11,7 +11,7 @@ struct TodoListItem: Codable, Identifiable {
 	let id: String
 	let ownerID: String
 	var title: String
-	var listId: String?
+	var todoListID: String = ""
 	var completed: Bool = false
 	var dueAt: TimeInterval
 	var createdAt: TimeInterval = Date().timeIntervalSince1970
@@ -28,12 +28,12 @@ struct TodoListItem: Codable, Identifiable {
 	}
 	
 	mutating func moveTodo(to newListId: String) {
-		listId = newListId
+		todoListID = newListId
 		updatedAt = Date().timeIntervalSince1970
 	}
 	
 	mutating func removeFromList() {
-		listId = nil
+		todoListID = ""
 		updatedAt = Date().timeIntervalSince1970
 	}
 	

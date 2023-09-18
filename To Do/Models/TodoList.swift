@@ -10,7 +10,7 @@ import Foundation
 struct TodoList: Codable, Identifiable {
 	let id: String
 	let ownerID: String
-	var title: String
+	var title: String = ""
 	var createdAt: TimeInterval = Date().timeIntervalSince1970
 	var updatedAt: TimeInterval = Date().timeIntervalSince1970
 	
