@@ -34,6 +34,18 @@ class SignInViewViewModel: BaseViewModel {
 		}
 	}
 	
+	func signInWithApple() {
+		
+	}
+	
+	func signInWithGoogle() {
+		
+	}
+	
+	func signInWithFacebook() {
+		
+	}
+	
 	private func isValidSubmission() -> Bool {
 		guard !isMobile else {
 			errorMessage = "Mobile number login is not yet available"

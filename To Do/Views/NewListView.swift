@@ -33,9 +33,9 @@ struct NewListView: View {
 		}
 		.alert(isPresented: $viewModel.showAlert) {
 			Alert(
-				title: Text("Error"),
+				title: Text(.errorAlertTitle),
 				message: Text(viewModel.errorMessage),
-				dismissButton: .default(Text("OK"), action: {
+				dismissButton: .default(Text(.alertOkButtonLabel), action: {
 					viewModel.showAlert = false
 				})
 			)
@@ -53,4 +53,6 @@ fileprivate extension LocalizedStringKey {
 	static var title = LocalizedStringKey("newlist.header.title")
 	static var listTitle = LocalizedStringKey("newlist.form.title.label")
 	static var saveButton = LocalizedStringKey("newlist.form.save.button")
+	static var errorAlertTitle = LocalizedStringKey("newlist.alert.error.title")
+	static var alertOkButtonLabel = LocalizedStringKey("newlist.alert.ok.button")
 }

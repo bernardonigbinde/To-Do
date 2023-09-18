@@ -26,15 +26,21 @@ struct SignInView: BaseView {
 				
 				Spacer()
 				
-				HStack(spacing: 10) {
-					Image(systemName: "")
-					Image(systemName: "")
-					Image(systemName: "")
-					Image(systemName: "")
+				HStack(spacing: 50) {
+					SocialLoginLogo(imageName: "apple-logo") {
+						viewModel.signInWithApple()
+					}
+					SocialLoginLogo(imageName: "google-logo") {
+						viewModel.signInWithGoogle()
+					}
+					SocialLoginLogo(imageName: "facebook-logo", tintColor: Color(red: 24/255, green: 119/255, blue: 242/255)) {
+						viewModel.signInWithFacebook()
+					}
 				}
+				.padding(.bottom, 10)
 				
-				
-				Spacer()
+				Divider()
+					.frame(width: UIScreen.main.bounds.width * 0.8)
 				
 				//			Sign Up Button
 				VStack {
@@ -49,6 +55,24 @@ struct SignInView: BaseView {
 struct SignInView_Previews: PreviewProvider {
 	static var previews: some View {
 		SignInView()
+	}
+}
+
+fileprivate struct SocialLoginLogo: View {
+	let imageName: String
+	var tintColor: Color? = nil
+	let action: () -> Void
+	
+	var body: some View {
+		Button(action: action) {
+			Image(uiImage: UIImage(named: imageName) ?? UIImage())
+				.renderingMode(tintColor == nil ? .original : .template)
+				.resizable()
+				.foregroundColor(tintColor)
+				.scaledToFit()
+				.frame(width: 40)
+		}
+
 	}
 }
 
@@ -85,7 +109,7 @@ fileprivate struct SignInFormView: View {
 		.cornerRadius(10)
 		.offset(y: -140)
 		.zIndex(-1)
-		.padding(30)
+		.padding(.horizontal, 30)
 	}
 }
 

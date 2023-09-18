@@ -9,6 +9,8 @@ import Foundation
 import FirebaseAuth
 
 class BaseViewModel: ObservableObject {
+//	Stops passing userID around - querying it when needed instead.
+//	This can probably be improved when you learn about `@EnvironmentOject`s
 	var firebaseUser: FirebaseAuth.User? { Auth.auth().currentUser }
 	
 	func signOut() {

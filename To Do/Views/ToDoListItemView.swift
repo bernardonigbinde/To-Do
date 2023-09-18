@@ -33,7 +33,7 @@ struct ToDoListItemView: View {
 		.swipeActions(
 			trailing: [
 				SwipeActionButton(
-					text: Text("Delete"),
+					text: Text(.swipeActionDeleteButton),
 					action: {
 						
 					},
@@ -57,4 +57,8 @@ struct ToDoListItemView_Previews: PreviewProvider {
 			)
 		))
 	}
+}
+
+fileprivate extension LocalizedStringKey {
+	static var swipeActionDeleteButton = LocalizedStringKey("todolistitem.swipeaction.delete.label")
 }

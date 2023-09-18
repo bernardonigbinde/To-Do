@@ -23,7 +23,7 @@ struct NewItemView: View {
 				TextField(.itemTitle, text: $viewModel.title)
 					.textFieldStyle(DefaultTextFieldStyle())
 				
-				Picker(selection: $viewModel.todoListID, label: Text("List")) {
+				Picker(selection: $viewModel.todoListID, label: Text(.listLabel)) {
 					ForEach(viewModel.lists, id: \.id) { list in
 						Text(list.title).tag(list.id)
 					}
@@ -45,9 +45,9 @@ struct NewItemView: View {
 		}
 		.alert(isPresented: $viewModel.showAlert) {
 			Alert(
-				title: Text("Error"),
+				title: Text(.errorAlertTitle),
 				message: Text(viewModel.errorMessage),
-				dismissButton: .default(Text("OK"), action: {
+				dismissButton: .default(Text(.alertOkButtonLabel), action: {
 					viewModel.showAlert = false
 				})
 			)
@@ -66,7 +66,10 @@ struct NewItemView_Previews: PreviewProvider {
 
 fileprivate extension LocalizedStringKey {
 	static var title = LocalizedStringKey("newitem.header.title")
-	static var itemTitle = LocalizedStringKey("newitem.form.title")
+	static var itemTitle = LocalizedStringKey("newitem.form.title.label")
+	static var listLabel = LocalizedStringKey("newitem.form.list.label")
 	static var dueAt = LocalizedStringKey("newitem.form.dueAt")
 	static var saveButton = LocalizedStringKey("newitem.form.save.button")
+	static var errorAlertTitle = LocalizedStringKey("newitem.alert.error.title")
+	static var alertOkButtonLabel = LocalizedStringKey("newitem.alert.ok.button")
 }

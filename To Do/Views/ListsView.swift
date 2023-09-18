@@ -20,7 +20,7 @@ struct ListsView: View {
 						.scaledToFit()
 						.frame(width: 150)
 						.foregroundColor(Color.gray)
-					Text("No lists yet")
+					Text(.emptyListLabel)
 						.foregroundColor(Color.gray)
 				} else{
 					List {
@@ -57,4 +57,5 @@ struct ListsView_Previews: PreviewProvider {
 
 fileprivate extension LocalizedStringKey {
 	static var title = LocalizedStringKey("lists.header.title")
+	static var emptyListLabel = LocalizedStringKey("lists.list.empty.label")
 }

@@ -1,9 +1,9 @@
 /* 
-  Localizable.strings
-  To Do
+Localizable.strings
+To Do
 
-  Created by Bernard Onigbinde on 2023/09/17.
-  
+Created by Bernard Onigbinde on 2023/09/17.
+
 */
 
 
@@ -17,7 +17,7 @@
 
 //Mark: DashboardView strings
 "dashboard.tabview.home.label" = "Home";
-"dashboard.tabview.lists.label" = "Lists";
+"dashboard.tabview.lists.label" = "Categories";
 "dashboard.tabview.profile.label" = "Profile";
 "dashboard.tabview.settings.label" = "Settings";
 
@@ -36,16 +36,19 @@
 "signup.form.button" = "Sign Up";
 
 //Mark: ListsView strings
-"lists.header.title" = "Lists";
+"lists.header.title" = "Categories";
+"lists.list.empty.label" = "No categries yet";
 
 //Mark: NewListView strings
-"newlist.header.title" = "New List";
+"newlist.header.title" = "New Category";
 "newlist.form.title.label" = "Title";
 "newlist.form.save.button" = "Save";
+"newlist.alert.error.title" = "Error";
+"newlist.alert.ok.button" = "OK";
 
 //Mark: ProfileView strings
 "profile.header.title" = "Profile";
-"profile.header.signout.button" = "Sign Out";
+"profile.header.signout.button" = "Sign out";
 
 //Mark: ToDoListView strings
 "todolist.header.title" = "To Do List";
@@ -54,12 +57,15 @@
 
 //Mark: NewItemView strings
 "newitem.header.title" = "New Item";
- "newitem.form.title" = "Title";
- "newitem.form.dueAt" = "Due Time";
- "newitem.form.save.button" = "Save";
+"newitem.form.title.label" = "Title";
+"newitem.form.dueAt" = "Due Time";
+"newitem.form.list.label" = "Category";
+"newitem.form.save.button" = "Save";
+"newitem.alert.error.title" = "Error";
+"newitem.alert.ok.button" = "OK";
 
 //Mark: ToDoListItemView strings
-"todolistitem.header.title" = "";
+"todolistitem.swipeaction.delete.label" = "Delete";
 
 //Mark: SettingsView strings
 "settings.header.title" = "Settings";
