@@ -21,7 +21,7 @@ class ToDoListViewViewModel: BaseViewModel {
 		db.collection("todoLists")
 			.whereField("ownerID", isEqualTo: userID)
 			.getDocuments { [weak self] snapshot, error in
-				guard let error = error else {
+				guard let _ = error else {
 					self?.todoLists.removeAll()
 					self?.todoLists.append(contentsOf: snapshot?.toList() ?? [])
 					return
@@ -31,7 +31,7 @@ class ToDoListViewViewModel: BaseViewModel {
 		db.collection("todos")
 			.whereField("ownerID", isEqualTo: userID)
 			.getDocuments { [weak self] snapshot, error in
-				guard let error = error else {
+				guard let _ = error else {
 					self?.todoItems.removeAll()
 					self?.todoItems.append(contentsOf: snapshot?.toList() ?? [])
 					return

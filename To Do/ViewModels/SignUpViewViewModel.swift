@@ -9,7 +9,7 @@ import Foundation
 import FirebaseAuth
 import FirebaseFirestore
 
-class SignUpViewViewModel: BaseViewModel {
+class SignUpViewViewModel: AuthBaseViewModel {
 	@Published var name = ""
 	@Published var username = ""
 	@Published var password = ""
@@ -60,20 +60,16 @@ class SignUpViewViewModel: BaseViewModel {
 	
 	private func signUpWithEmail() {
 		Auth.auth().createUser(withEmail: username, password: password) { [weak self] result, error in
-			guard let userID = result?.user.uid else {
+			guard
+				let userID = result?.user.uid,
+				let name = self?.name,
+				let username = self?.username
+			else {
 				return
 			}
 			
-			self?.insertUserRecord(id: userID)
+			let user = User(id: userID, name: name, email: username)
+			self?.storeUser(user)
 		}
-	}
-	
-	private func insertUserRecord(id: String) {
-		let user = User(id: id, name: name, email: username)
-		
-		let db = Firestore.firestore()
-		db.collection("users")
-			.document(id)
-			.setData(user.toJson())
 	}
 }

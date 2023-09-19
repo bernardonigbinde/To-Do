@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import GoogleSignIn
+import Firebase
 
 struct SignInView: BaseView {
 	@StateObject private var viewModel = SignInViewViewModel()
@@ -27,15 +29,9 @@ struct SignInView: BaseView {
 				Spacer()
 				
 				HStack(spacing: 50) {
-					SocialLoginLogo(imageName: "apple-logo") {
-						viewModel.signInWithApple()
-					}
-					SocialLoginLogo(imageName: "google-logo") {
-						viewModel.signInWithGoogle()
-					}
-					SocialLoginLogo(imageName: "facebook-logo", tintColor: Color(red: 24/255, green: 119/255, blue: 242/255)) {
-						viewModel.signInWithFacebook()
-					}
+					AppleSignInButton { viewModel.signInWithApple() }
+					GoogleSignInButton { viewModel.signInWithGoogle(result: $0) }
+					FacebookLoginButton { viewModel.signInWithFacebook() }
 				}
 				.padding(.bottom, 10)
 				
@@ -110,6 +106,42 @@ fileprivate struct SignInFormView: View {
 		.offset(y: -140)
 		.zIndex(-1)
 		.padding(.horizontal, 30)
+	}
+}
+
+fileprivate struct GoogleSignInButton: View {
+	let action: (GIDSignInResult?) -> Void
+	
+	var body: some View {
+		SocialLoginLogo(imageName: "google-logo") {
+			guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+			
+			let config = GIDConfiguration(clientID: clientID)
+			GIDSignIn.sharedInstance.configuration = config
+			
+			GIDSignIn.sharedInstance.signIn(withPresenting: getRootViewController()) { signInResult, error in
+				guard let _ = error else {
+					action(signInResult)
+					return
+				}
+			}
+		}
+	}
+}
+
+fileprivate struct FacebookLoginButton: View {
+	let action: () -> Void
+	
+	var body: some View {
+		SocialLoginLogo(imageName: "facebook-logo", tintColor: Color(red: 24/255, green: 119/255, blue: 242/255), action: action)
+	}
+}
+
+fileprivate struct AppleSignInButton: View {
+	let action: () -> Void
+	
+	var body: some View {
+		SocialLoginLogo(imageName: "apple-logo", action: action)
 	}
 }
 
