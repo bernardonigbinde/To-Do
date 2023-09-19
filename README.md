@@ -4,7 +4,7 @@ SwiftUI Todo app using Firebase Auth for authentication and Firestore for storag
 ## Primary features
 - [x] Sign up with email and password
 - [x] Sign in with email and password
-- [ ] Sign in with Apple
+- [ ] Sign in with Apple **`WON'T DO`** - requires Apple developer account setup.
 - [ ] Sign in with Google
 - [x] Sign in with Facebook
 - [ ] Sign in with Mobile number
