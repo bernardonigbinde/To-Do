@@ -18,3 +18,5 @@ SwiftUI Todo app using Firebase Auth for authentication and Firestore for storag
 
 ## Other features
 - [x] Localization
+- [x] Pull to refresh on all lists
+- [ ] Refresh on return to screens
