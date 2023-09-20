@@ -38,7 +38,7 @@ class NewItemViewViewModel: BaseViewModel {
 	func save() -> Bool {
 		guard canSave else { return false }
 		
-		guard let userID = Auth.auth().currentUser?.uid else {
+		guard let userID = firebaseUser?.uid else {
 			errorMessage = "Could not load your account correctly."
 			showAlert = true
 			return false
@@ -48,7 +48,7 @@ class NewItemViewViewModel: BaseViewModel {
 		let todoListItem = TodoListItem(id: todoListItemID, ownerID: userID, title: title, todoListID: todoListID, dueAt: dueAt.timeIntervalSince1970)
 		
 		let db = Firestore.firestore()
-		db.collection("todos")
+		db.collection(Constants.Collections.todoListItems)
 			.document(todoListItemID)
 			.setData(todoListItem.toJson())
 		
@@ -58,7 +58,7 @@ class NewItemViewViewModel: BaseViewModel {
 	func getLists() {
 		guard let userID = firebaseUser?.uid else { return }
 		let db = Firestore.firestore()
-		db.collection("todoLists")
+		db.collection(Constants.Collections.todoLists)
 			.whereField("ownerID", isEqualTo: userID)
 			.getDocuments { [weak self] snapshot, error in
 				guard let error = error else {

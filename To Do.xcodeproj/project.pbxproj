@@ -58,6 +58,7 @@
 		A15982B32AB9167A007ABA6B /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = A15982B22AB9167A007ABA6B /* GoogleSignIn */; };
 		A15982B62AB91CA4007ABA6B /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = A15982B52AB91CA4007ABA6B /* FacebookLogin */; };
 		A15982B92AB9221C007ABA6B /* AuthBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15982B82AB9221C007ABA6B /* AuthBaseViewModel.swift */; };
+		A1A830102ABB20B800F131B2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A8300F2ABB20B800F131B2 /* Constants.swift */; };
 		A1E5641F2AB7439100848C40 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A1E564212AB7439100848C40 /* Localizable.strings */; };
 		A1E564232AB744B900848C40 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E564222AB744B900848C40 /* SettingsView.swift */; };
 		A1E564252AB744C300848C40 /* SettingsViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E564242AB744C300848C40 /* SettingsViewViewModel.swift */; };
@@ -112,6 +113,7 @@
 		A15982B72AB91D74007ABA6B /* To Do.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "To Do.entitlements"; sourceTree = "<group>"; };
 		A15982B82AB9221C007ABA6B /* AuthBaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthBaseViewModel.swift; sourceTree = "<group>"; };
 		A199DBB12AB9251000B51716 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1A8300F2ABB20B800F131B2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A1E564202AB7439100848C40 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A1E564222AB744B900848C40 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A1E564242AB744C300848C40 /* SettingsViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewViewModel.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 			children = (
 				A15982A62AB8F528007ABA6B /* SwipeActionView.swift */,
 				A15982A82AB8F55F007ABA6B /* SwipeActionButton.swift */,
+				A1A8300F2ABB20B800F131B2 /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -310,7 +313,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					A146BEE02AB7353900A51C57 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -394,6 +397,7 @@
 				A15982B02AB91635007ABA6B /* AppDelegate.swift in Sources */,
 				A146BEE52AB7353900A51C57 /* SceneDelegate.swift in Sources */,
 				A146BF1C2AB73BF800A51C57 /* NewItemViewViewModel.swift in Sources */,
+				A1A830102ABB20B800F131B2 /* Constants.swift in Sources */,
 				A146BF082AB73B1300A51C57 /* SignInView.swift in Sources */,
 				A146BF182AB73BD800A51C57 /* SignInViewViewModel.swift in Sources */,
 				A10642102AB75DCF00045FBD /* ForgotPasswordViewViewModel.swift in Sources */,
@@ -456,6 +460,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -516,6 +521,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

@@ -7,14 +7,26 @@
 
 import SwiftUI
 import FirebaseFirestoreSwift
+import FirebaseAuth
 
 struct ListsView: View {
 	@StateObject private var viewModel = ListsViewViewModel()
+	@FirestoreQuery var todoList: [TodoList]
+	
+	init() {
+		if let userID = Auth.auth().currentUser?.uid {
+			_todoList = FirestoreQuery<[TodoList]>(collectionPath: Constants.Collections.todoLists, predicates: [
+				.whereField("ownerID", isEqualTo: userID)
+			])
+		} else {
+			_todoList = FirestoreQuery(collectionPath: "")
+		}
+	}
 	
     var body: some View {
 		NavigationView {
 			VStack {
-				if viewModel.todoLists.isEmpty {
+				if todoList.isEmpty {
 					Image(systemName: "tray.fill")
 						.resizable()
 						.scaledToFit()
@@ -24,7 +36,7 @@ struct ListsView: View {
 						.foregroundColor(Color.gray)
 				} else{
 					List {
-						ForEach(viewModel.todoLists) { list in
+						ForEach(todoList) { list in
 							Text(list.title)
 						}
 					}
@@ -41,9 +53,6 @@ struct ListsView: View {
 			.sheet(isPresented: $viewModel.isShowingNewListView) {
 				NewListView(isPresented: $viewModel.isShowingNewListView)
 			}
-		}
-		.onAppear {
-			viewModel.loadLists()
 		}
     }
 }

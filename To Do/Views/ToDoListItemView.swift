@@ -35,7 +35,7 @@ struct ToDoListItemView: View {
 				SwipeActionButton(
 					text: Text(.swipeActionDeleteButton),
 					action: {
-						
+						viewModel.delete(todo)
 					},
 					tint: .red
 				)

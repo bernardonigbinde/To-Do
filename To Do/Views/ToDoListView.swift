@@ -6,16 +6,33 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 struct ToDoListView: View {
 	@StateObject private var viewModel = ToDoListViewViewModel()
+	@FirestoreQuery var todoListItems: [TodoListItem]
+	@FirestoreQuery var todoLists: [TodoList]
+	
+	init() {
+		if let userID = Auth.auth().currentUser?.uid {
+			_todoListItems = FirestoreQuery(collectionPath: Constants.Collections.todoListItems, predicates: [
+				.whereField("ownerID", isEqualTo: userID)
+			])
+			_todoLists = FirestoreQuery(collectionPath: Constants.Collections.todoLists, predicates: [
+				.whereField("ownerID", isEqualTo: userID)
+			])
+		} else {
+			_todoLists = FirestoreQuery(collectionPath: "")
+			_todoListItems = FirestoreQuery(collectionPath: "")
+		}
+	}
 
     var body: some View {
 		NavigationView {
 			VStack {
-				if viewModel.todoItems.isEmpty {
+				if todoListItems.isEmpty {
 					Image(systemName: "tray.fill")
 						.resizable()
 						.scaledToFit()
@@ -26,13 +43,13 @@ struct ToDoListView: View {
 				} else{
 					List {
 						Section(header: Text(.uncategorizedHeader)) {
-							ForEach(viewModel.todoItems.filter({ $0.todoListID.isEmpty })) { todo in
+							ForEach(todoListItems.filter({ $0.todoListID.isEmpty })) { todo in
 								ToDoListItemView(todo: .constant(todo))
 							}
 						}
-						ForEach(viewModel.todoLists) { list in
+						ForEach(todoLists) { list in
 							Section(header: Text(list.title)) {
-								ForEach(viewModel.todoItems.filter({ $0.todoListID == list.id })) { todo in
+								ForEach(todoListItems.filter({ $0.todoListID == list.id })) { todo in
 									ToDoListItemView(todo: .constant(todo))
 								}
 							}
@@ -53,9 +70,6 @@ struct ToDoListView: View {
 		}
 		.sheet(isPresented: $viewModel.isShowingNewItemView) {
 			NewItemView(isPresented: $viewModel.isShowingNewItemView)
-		}
-		.onAppear {
-			viewModel.loadData()
 		}
 	}
 }

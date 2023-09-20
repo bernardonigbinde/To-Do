@@ -53,13 +53,13 @@ class SignInViewViewModel: AuthBaseViewModel {
 	func signInWithFacebook() {
 		let loginManager = LoginManager()
 		loginManager.logIn(permissions: ["public_profile"], from: nil) { loginManagerLoginResult, error in
-			guard let error = error else {
+			guard let _ = error else {
 				guard let accessToken = AccessToken.current else { return }
 				print("Access Token: \(accessToken)")
 				
 				let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
 				Auth.auth().signIn(with: credential) { [weak self] result, error in
-					guard let error = error else {
+					guard let _ = error else {
 						guard let userID = self?.firebaseUser?.uid else { return }
 						let user = User(id: userID, name: self?.firebaseUser?.displayName ?? "User", email: self?.firebaseUser?.email ?? "")
 						self?.storeUser(user)

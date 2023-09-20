@@ -12,7 +12,7 @@ class AuthBaseViewModel: BaseViewModel {
 	
 	func storeUser(_ user: User) {
 		let db = Firestore.firestore()
-		db.collection("users")
+		db.collection(Constants.Collections.users)
 			.document(user.id)
 			.setData(user.toJson())
 	}

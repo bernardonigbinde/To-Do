@@ -42,7 +42,7 @@ class NewListViewViewModel: BaseViewModel {
 		let todoList = TodoList(id: todoListID, ownerID: userID, title: title)
 		
 		let db = Firestore.firestore()
-		db.collection("todoLists")
+		db.collection(Constants.Collections.todoLists)
 			.document(todoListID)
 			.setData(todoList.toJson())
 		
