@@ -9,14 +9,19 @@ SwiftUI Todo app using Firebase Auth for authentication and Firestore for storag
 - [x] Sign in with Facebook
 - [ ] Sign in with Mobile number
 - [x] View categorized list of todos
+- [x] Create new todo
+- [ ] Update todo
+- [x] Delete todo
 - [x] View list of categories
+- [x] Create new category
+- [ ] Update category
+- [ ] Delete category
 - [ ] View profile
     - [x] Sign out
 - [ ] Update profile
+- [ ] Delete account
 - [ ] View settings
 - [ ] Update settings
 
 ## Other features
 - [x] Localization
-- [x] Pull to refresh on all lists
-- [ ] Refresh on return to screens
